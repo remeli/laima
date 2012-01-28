@@ -1,0 +1,54 @@
+#encoding: UTF-8
+
+class ServicesController < ApplicationController
+  
+  respond_to :html
+  
+  def index
+    @services = Service.all
+    respond_with @services
+  end
+  
+  def show
+    @service = Service.find(params[:id])
+    respond_with @service
+  end
+  
+  def new
+    @service = Service.new
+    respond_with @service
+  end
+  
+  def edit
+    @service = Service.find(params[:id])
+    respond_with @service
+  end
+  
+  def create
+    @service = Service.new(params[:service])
+    if @service.save
+      flash[:notice] = "Услуга успешно добавлена"
+      respond_with(@service, :location => service_path(@service))
+    else
+      render 'new'
+    end
+  end
+  
+  def update
+    @service = Service.find(params[:id])
+    if @service.update_attributes(params[:service])
+      flash[:notice] = "Услуга успешно обновлена"
+      respond_with(@service, :location => service_path(@service))
+    else
+      render 'edit'
+    end
+  end
+  
+  def destroy
+    @service = Service.find(params[:id])
+    @service.destroy
+    flash[:notice] = "Услуга успешно удалена"
+    redirect_to services_path
+  end
+  
+end
