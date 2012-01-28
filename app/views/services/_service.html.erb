@@ -1,0 +1,10 @@
+<ul>
+  <li><%= link_to service.title, service_path(service) %></li>
+  <li><%= service.description %></li>
+  <li>
+    <%= link_to "Редактировать", edit_service_path(service) %>
+    <%= link_to "Удалить", service, :method => :delete, 
+    :confirm => "Вы уверены?" %>
+  </li>
+</ul>
+<br /><br />

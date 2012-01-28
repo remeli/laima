@@ -1,0 +1,15 @@
+<%= form_for(@service) do |f| %>
+  <ul>
+    <li>
+      <%= f.label :title, "Название:" %>
+      <%= f.text_field :title %>
+    </li>
+    <li>
+      <%= f.label :description, "Описание:" %>
+      <%= f.text_area :description %>
+    </li>
+    <li>
+      <%= f.submit @service.button_value %>
+    </li>
+  </ul>
+<% end %>
