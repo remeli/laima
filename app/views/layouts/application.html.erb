@@ -5,165 +5,22 @@
 </head>
 <body>
   <div id="wrapper">
-    <div id="header">
-      <div id="logo">
-        <a href="index.html"><%= link_to image_tag('logo.png'), root_path %></a>
-      </div>
-      <div id="telephone-header">
-        <h2>Наш телефон: <span>8(495) 729-45-39</span></h2>
-        <h2>Не дозвонились? Закажите обратный <a href="#">звонок</a></h2>
-      </div>
-      <div id="price-list">
-        <p>прайс лист</p>
-        <div id="download-price-list">
-          <a href="#">Скачать!</a>
-        </div>
-      </div>
-    </div>
-    <div id="main-menu">
-      <ul>
-        <li id="first"><a href="#">ГЛАВНАЯ</a></li>
-        <li><a href="#">УСЛУГИ</a></li>
-        <li><a href="#">ЦЕНЫ</a></li>
-        <li><a href="#">КЛИЕНТЫ</a></li>
-        <li><a href="#">КОНТАКТЫ</a></li>
-      </ul>
-      <div id="search">
-        <input type="text" name="search" placeholder="Поиск">
-      </div>
-    </div>
-    <div id="slider">
-      <div class="slider-content">
-        <div class="slider-woman">
-          <div class="left-arrow">
-            <a href="#"><%= link_to image_tag('left-arrow.png'),"#" %></a>
-          </div>
-          <div class="slider-text">
-            <h1>Наружная реклама</h1>
-            <h3>Изготовление и согласование 
-            рекламных конструкций всех 
-            видов, любой сложности. 
-            Мы уверены в качестве нашей 
-            работы, поэтому даем гарантию 
-            на нашу продукцию</h3>
-            <p>
-              Качественное изготовление неоновой 
-                наружной рекламы невозможно без 
-                специалистов. Только очень опытному 
-                мастеру дела известно, какие цвета 
-                вызовут приятные ассоциации, а какие 
-                употреблять в данной композиции 
-                нельзя. Можно ли сочетать на синем 
-                фоне темно-зеленые ...            
-            </p>
-            <div class="slide-text-more">
-              <a href="#">Подробнее</a>
-            </div>
-          </div>
-        </div>
-        <div class="slider-image">
-          <%= image_tag 'hotel.png' %>
-        </div>
-      </div>
-      <div class="right-arrow">
-        <a href="#"><%= link_to image_tag('right-arrow.png'),"#" %></a>
-      </div>
-    </div>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/mainmenu' %>
+    <%= render 'layouts/slider' %>
+    
     <div id="main-content">
       <!-- our works   -->
-      <div id="our-works">
-        <div id="our-works-header">
-          <h1>Наши работы</h1>
-          <div id="arrows-works">
-            <a href="#"><%= link_to image_tag('arrow-work-left.png'),"#" %></a>
-            <a href="#"><%= link_to image_tag('arrow-work-right.png'),"#" %></a>
-          </div>
-        </div>
-        <ul class="img-works">
-          <li><a href="#"><%= link_to image_tag('hotel-works.png'),"#" %></a></li>
-          <li><a href="#"><%= link_to image_tag('ostin-works.png'),"#" %></a></li>
-          <li><a href="#"><%= link_to image_tag('three-works.png'),"#" %></a></li>
-          <li><a href="#"><%= link_to image_tag('mone-works.png'),"#" %></a></li>
-          <li><a href="#"><%= link_to image_tag('german-works.png'),"#" %></a></li>
-        </ul>
-      </div>
+        <%= render 'layouts/our-works' %>
       <!-- end our workds -->
+      
       <!-- sidebar -->
-      <div id="sidebar">
-        <div id="services">
-          <h1 class="title-services">Услуги</h1>
-          <ul>
-            <li><a href="#">Наружная реклама</a></li>
-            <li><a href="#">Стеллы, пилоны</a></li>
-            <li><a href="#">Крышные установки</a></li>
-            <li><a href="#">Вывески</a></li>
-            <li><a href="#">Вывески</a></li>
-            <li><a href="#">Вывески из Дибонда</a></li>
-            <li><a href="#">Фасады</a></li>
-            <li><a href="#">Рекламные конструкции</a></li>
-            <li><a href="#">Световые короба</a></li>
-            <li><a href="#">Объёмные коробы</a></li>
-            <li><a href="#">Неоновые вывески</a></li>
-            <li><a href="#">Интерьерные вывески</a></li>
-            <li><a href="#">Оформление АЗС</a></li>
-            <li><a href="#">Светодиодные вывески</a></li>
-          </ul>
-        </div>
-        <div id="orderphone">
-          <div class="block-online">
-            <div class="online-telephone">
-              <a href="#">
-                <%= link_to image_tag('button-order.png'),"#" %>
-              </a>
-            </div>
-            <div class="faq-online">
-              <a href="#">
-                <%= link_to image_tag('button-faq.png'),"#" %>
-              </a>
-            </div>
-          </div>
-          <div class="order-description">
-            При заказе профессиональной рекламы Вы не
-            только получаете скидку, но и консультацию 
-            наших специалистов дизайнеров, которые ответят
-            на все <a href="#">Ваши вопросы</a> бесплатно!
-          </div>
-        </div>
-        <ul id="social-links">
-          <li>
-            <a href="#">
-              <%= link_to image_tag('twitter-icon.png'),"#" %>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <%= link_to image_tag('facebook-icon.png'),"#" %>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <%= link_to image_tag('rss-icon.png'),"#" %>
-            </a>
-          </li>
-        </ul>
-        <div class="clear"></div>
-      </div>
+        <%= render 'layouts/sidebar' %>
       <!-- end sidebar -->
       
       <!-- content -->
       <div id="content">
-        <h1 class="title-content">Немного о нас</h1>
-        <div id="about-main">
-          <p>Самой древней рекламой является наружная реклама, размещенная над магазином, кафе, парикмахерской и т.д, и содержащая название заведения, а также имя хозяина.Сегодня наружную рекламу используют для информации и рекламы, однако поменялись материалы и формы подачи.Наружные вывески бывают: световые и несветовые, короба или объемные буквы на ткани или пластике. Для разработки наружной рекламы дизайнеры и изготовители сочетают фантазию, а также весь арсенал технических возможностей.
-          </p>
-          <h1>Наши преимущества</h1>
-          <p>Работая на рынке не один год, мы накопили значительный опыт в оформлении витрин, выставочных стендов, торговых точек. С примерами наших некоторых работ вы можете ознакомиться в разделе <a href="#">“Наши работы”</a>.
-          </p>
-          <p>- Опыт работы в производстве наружной рекламы. Вы можете оценить рекламные конструкции в разделе .</p>
-          <p>- Профессионализм. Качественное изготовление неоновой наружной рекламы невозможно без специалистов. Только опытному мастеру дела известно, какие цвета вызовут приятные ассоциации, а какие употреблять в данной композиции нельзя. Можно ли сочетать на синем фоне темно-зеленые ...</p>
-          <p>- Креатив. Изготовление успешной наружной рекламы невозможно без свежих идей. Эти идеи должны идти в ногу со временем и содержать в себе современные тенденции рекламного оформления. Просмотрите раздел “Наши работы”
-          </p>
-        </div>
+        <%= render 'layouts/content' %>   
         <div id="regions">
           <div class="list-regions">
             <h1 class="title-regions">Мы работаем с регионами Московской области</h1>
@@ -225,9 +82,7 @@
       <div class="clear"></div>
     </div>
     <!-- footer -->
-    <div id="footer">
-      footer
-    </div>
+    <%= render 'layouts/footer' %>   
   </div>
 </body>
 </html>
