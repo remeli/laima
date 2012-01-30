@@ -4,8 +4,7 @@ Laima::Application.routes.draw do
   #get "pages/index"
   
   #static pages
-  match "/contacts" => "pages#contacts"#, :as => :contacts
-  match "/home" => "pages#index", :as => :index
+  match "/contacts" => "pages#contacts", :as => :contacts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
