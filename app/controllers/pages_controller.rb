@@ -1,8 +1,9 @@
 # encoding:utf-8
 class PagesController < ApplicationController
   def index
-    render :layout => "main"
+    @jobs = Job.all
     @title = "LAIMA - Профессиональная наружная реклама"
+    render :layout => "main"
   end
   
   def contacts
