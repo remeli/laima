@@ -1,9 +1,9 @@
 Laima::Application.routes.draw do
-<<<<<<< HEAD
+
   resources :clients
-=======
+
   resources :users
->>>>>>> develop
+
 
   resources :services
   resources :jobs
