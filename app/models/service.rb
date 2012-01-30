@@ -36,9 +36,5 @@ class Service < ActiveRecord::Base
     end
   end
   
-  def self.random
-    all.sample(5)
-  end
-  
 end
 # todo: сделать рандом!

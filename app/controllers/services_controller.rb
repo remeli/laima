@@ -7,6 +7,7 @@ class ServicesController < ApplicationController
   def show
     @service = Service.find(params[:id])
     @title = @service.title
+    @jobs = @service.jobs
     respond_with @service
   end
 

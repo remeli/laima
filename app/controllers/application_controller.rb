@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   before_filter :load_services
   
   def load_services
-    @services = Service.random
+    @services = Service.all
   end
 end
