@@ -2,20 +2,9 @@
   <div id="services">
     <h1 class="title-services">Услуги</h1>
     <ul>
-      <li><a href="#">Наружная реклама</a></li>
-      <li><a href="#">Стеллы, пилоны</a></li>
-      <li><a href="#">Крышные установки</a></li>
-      <li><a href="#">Вывески</a></li>
-      <li><a href="#">Вывески</a></li>
-      <li><a href="#">Вывески из Дибонда</a></li>
-      <li><a href="#">Фасады</a></li>
-      <li><a href="#">Рекламные конструкции</a></li>
-      <li><a href="#">Световые короба</a></li>
-      <li><a href="#">Объёмные коробы</a></li>
-      <li><a href="#">Неоновые вывески</a></li>
-      <li><a href="#">Интерьерные вывески</a></li>
-      <li><a href="#">Оформление АЗС</a></li>
-      <li><a href="#">Светодиодные вывески</a></li>
+      <% @services.each do |s| %>
+        <li><%= link_to s.title, s %></li>
+      <% end %>
     </ul>
   </div>
   <div id="orderphone">
