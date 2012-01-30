@@ -1,0 +1,11 @@
+<%= form_for @price do |f| %>
+  
+  <%= f.label :price, "Цена" %>
+  <%= f.text_field :price %>
+  
+  <%= f.label :service_id, "Услуга" %>
+  <%= f.collection_select(:service_id, Service.all, :id, :title) %>
+  
+   <%= f.submit @price.button_value  %>
+  
+<% end %>
