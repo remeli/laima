@@ -21,7 +21,7 @@ class Admin::ClientsController < ApplicationController
     @client = Client.create(params[:client])
     if @client.save
       flash[:notice] = "Клиент успешно добавлен!"
-      respond_with @client, :location => admin_clients_path)
+      respond_with(@client, :location => admin_clients_path)
     else
       render 'new'
     end    
@@ -36,7 +36,7 @@ class Admin::ClientsController < ApplicationController
     @client = Client.find(params[:id])
     if @client.update_attributes(params[:client])
       flash[:notice] = "Клиент успешно обновлен!"
-      respond_with @client, :location => admin_clients_path)
+      respond_with(@client, :location => admin_clients_path)
     else
       render 'edit'
     end        
