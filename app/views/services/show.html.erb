@@ -1,5 +1,12 @@
-<b><%= @service.title %></b>
-<p><%= @service.description %></p>
+<p><b><%= @service.title %></b></p>
+<br />
+<p><%= image_tag @service.photo.url(:small) %></p>
+<ul>
+  <li><b>Краткое описание:</b></li>
+  <li><%= @service.short_description %></li>
+  <li><b>Полное описание:</b></li>
+  <li><%= @service.description %></li>
+</ul>
 <ul>
   <li><%= link_to "Редактировать", edit_service_path(@service) %></li>
   <li><%= link_to "Удалить", @service, :method => "delete", 
