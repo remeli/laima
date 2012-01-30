@@ -3,7 +3,7 @@ Laima::Application.routes.draw do
   get "sessions/new"
  
   resources :users
-  resources :services
+  resources :services, :only => [:show]
   resources :jobs
   resources :users
   resources :sessions
