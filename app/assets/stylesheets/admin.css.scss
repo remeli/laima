@@ -11,7 +11,7 @@
     color:#4D4D4D;
   }
   #menu{
-    font: 1.0em/1.5em Georgia, "Lucida Grande", "Lucida Sans Unicode", helvetica, verdana, arial, times, "Times New Roman", sans-serif;
+    font: 1.0em/1.5em Arial, Tahoma, sans-serif;
     height:40px;
     ul li{
       float:left;
@@ -115,6 +115,51 @@
   .pagination{
     margin-top:40px;
     margin-left:10px;
+  }
+  #services-admin{
+    .title{
+      font: 1.7em/1.5em Arial, Tahoma, sans-serif;
+    }
+    .one-service{
+      margin-top:15px;
+      padding:4px;
+      h2{
+        font: 1.2em/1.5em Arial, Tahoma, sans-serif;
+        display: inline-block;
+        width:350px;
+        float:left;
+      }      
+    }  
+    .even{
+      background:#F6F6F6;
+    }
+    .odd{
+      background:#EEEEEE;
+    } 
+    .add{
+      margin-top:20px;
+    }
+  }
+  #service-show{
+    .title{
+      font: 1.7em/1.5em Arial, Tahoma, sans-serif;
+      margin-bottom:10px;
+    }
+    .photo{
+      img{
+        width:200px;
+        height:150px;
+      }
+    }
+    .desc-small{
+      margin:5px 0px;
+    }
+    .desc-full{
+      margin:5px 0px;
+    }
+    .actions{
+      margin-top:20px;
+    }
   }
 }
 
