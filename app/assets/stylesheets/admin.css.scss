@@ -1,3 +1,18 @@
-// Place all the styles related to the admin controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#wrapper{
+  width:1000px;
+  margin:0 auto;
+  #header{
+    height:70px;
+    padding-left:10px;
+    padding-top:30px;
+    font: 1.7em/1.5em "Arial Narrow", helvetica, verdana, arial, times, "Times New Roman", sans-serif
+  }
+}
+a{
+  color:#4D4D4D;
+}
+#footer{
+  clear:both;
+  height:60px;
+  font: 0.7em/1.5em Arial, "Times New Roman", sans-serif
+}
