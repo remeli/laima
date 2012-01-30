@@ -1,5 +1,7 @@
 Laima::Application.routes.draw do
 
+  resources :prices
+
   resources :clients
 
   resources :users
