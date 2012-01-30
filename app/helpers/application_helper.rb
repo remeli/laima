@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 module ApplicationHelper
   
   def errors_for_object(object)
