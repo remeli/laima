@@ -1,5 +1,21 @@
-<b>Все услуги</b>
-<br /><br />
-<%= link_to "Добавить услугу", new_service_path %>
-<br /><br />
-<%= render @services %>
+<div id="services-admin">
+  <h1 class="title">Услуги</h1>
+  <%= notice_msg(flash[:notice]) %>
+  <% @services.each do |s| %>  
+    <div class="one-service">
+      <h2><%= s.title %></h2>
+      <div class="actions">
+        <%= link_to eye_icon, admin_service_path(s) %>
+        <%= link_to edit_icon, edit_admin_service_path(s) %>
+        <%= link_to delete_icon, admin_service_path(s), :confirm => "Уверены?", :method => :delete %>
+      </div>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+  <div class="add">
+    <%= button_to "Добавить услугу", new_admin_service_path, :method => :get %>  
+  </div>
+</div>
+
+
+
