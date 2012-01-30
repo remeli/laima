@@ -3,13 +3,7 @@ Laima::Application.routes.draw do
   get "sessions/new"
 
 
-  resources :prices
-
-  resources :clients
-
   resources :users
-
-
   resources :services
   resources :jobs
   resources :users
@@ -25,6 +19,8 @@ Laima::Application.routes.draw do
   namespace :admin do
     resources :services
     resources :jobs
+    resources :prices
+    resources :clients
   end
 
   # The priority is based upon order of creation:

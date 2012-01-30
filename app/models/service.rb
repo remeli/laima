@@ -2,11 +2,15 @@
 
 class Service < ActiveRecord::Base
 
+  has_one :price  
+
+
   attr_accessible :title, :description
   
   # relations:
   has_many :jobs, :dependent => :destroy
   
+
   has_attached_file :photo, :styles => { :small => "150x150>" },
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
