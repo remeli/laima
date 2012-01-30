@@ -8,9 +8,9 @@
   <li><%= @service.description %></li>
 </ul>
 <ul>
-  <li><%= link_to "Редактировать", edit_service_path(@service) %></li>
+  <li><%= link_to "Редактировать", edit_admin_service_path(@service) %></li>
   <li><%= link_to "Удалить", @service, :method => "delete", 
   :confirm => "Вы уверены?" %></li>
 </ul>
 <br /><br />
-<%= link_to "Все услуги", services_path %> 
+<%= link_to "Все услуги", admin_services_path %> 

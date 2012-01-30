@@ -1,0 +1,6 @@
+<h1><%= @client.title %></h1>
+<%= image_tag @client.logo.url(:medium) %>
+<p>
+<%= @client.description %>
+</p>
+<%= link_to 'Редактировать', admin_edit_client_path(@client) %>

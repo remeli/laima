@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130103701) do
+
+
+ActiveRecord::Schema.define(:version => 20120130104709) do
+
+
+  create_table "clients", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
+
 
   create_table "jobs", :force => true do |t|
     t.string   "title"
@@ -22,6 +37,13 @@ ActiveRecord::Schema.define(:version => 20120130103701) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "service_id"
+  end
+
+  create_table "prices", :force => true do |t|
+    t.integer  "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "service_id"
   end
 
