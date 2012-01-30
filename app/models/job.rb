@@ -1,9 +1,19 @@
 class Job < ActiveRecord::Base
+  attr_accessible :title, :description, :image
+  
   # validates
-  validations :title, :presence => true
-  validation :description, :length => { :maximum => 800 }
+  validates :title, :presence => true
+  validates :description, :length => { :maximum => 800 }
   
   # scope
   default_scope order('created_at DESC')
-  
+
+  # paperclip
+  has_attached_file :image, :styles => {:thumb => "164x134>"},
+    :url => "/system/:attachment/:id/:style/:basename.:extension",
+    :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
+  validates_attachment_size :image, :less_than => 5.megabytes
+  validates_attachment_content_type :image, :content_type => ['image/jpeg',
+    'image/png', 'image/gif']
+    
 end
