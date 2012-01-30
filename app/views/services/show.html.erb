@@ -1,9 +1,9 @@
-<p><b><%= @service.title %></b></p>
-<br />
-<p><%= image_tag @service.photo.url(:small) %></p>
-<ul>
-  <li><b>Краткое описание:</b></li>
-  <li><%= @service.short_description %></li>
-  <li><b>Полное описание:</b></li>
-  <li><%= @service.description %></li>
-</ul>
+<div id="service-show">
+  <h1 class="title"><%= @service.title %></h1>
+  <div class="short-description">
+    <%= @service.short_description %>
+  </div>
+  <div class="full-description">
+    <%= @service.description %>
+  </div>
+</div>

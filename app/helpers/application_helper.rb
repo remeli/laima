@@ -7,6 +7,15 @@ module ApplicationHelper
       render(:partial => "shared/errors", :locals => {:object => object})  
     end
   end
+
+  def title
+    base_title = "LAIMA - Профессиональная наружная реклама"
+    if @title
+      base_title + " / " + @title
+    else
+      base_title
+    end
+  end
   
   def eye_icon
     image_tag "/assets/eye-icon.png"
