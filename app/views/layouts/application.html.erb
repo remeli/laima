@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <%= render 'layouts/head' %>
+</head>
+<body>
+  <div id="wrapper">
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/mainmenu' %>
+    
+    <div id="main-content"> 
+      
+      <!-- sidebar -->
+        <%= render 'layouts/sidebar' %>
+      <!-- end sidebar -->
+      
+      <!-- content -->
+      <div id="content">
+        <%= yield %>
+      </div>
+      <!-- end content -->
+      
+      <div class="clear"></div>
+    </div>
+    <!-- footer -->
+    <%= render 'layouts/footer' %>   
+  </div>
+</body>
+</html>
