@@ -19,7 +19,7 @@ class JobsController < ApplicationController
   
   def edit
     @job = Job.find(params[:id])
-    respond_to @job
+    respond_with @job
   end
   
   def create
@@ -34,7 +34,7 @@ class JobsController < ApplicationController
   
   def update
     @job = Job.find(params[:id])
-    if @job.update_attrbiutes(params[:job])
+    if @job.update_attributes(params[:job])
       flash[:notice] = "Работа успешно обновлена"
       respond_with(@job, :location => jobs_path)
     else
@@ -48,3 +48,5 @@ class JobsController < ApplicationController
     redirect_to(jobs_path, :notice => "Работа успешно удалена")
   end
 end
+
+# todo: добавить удаление создание во вьюхах
