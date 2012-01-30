@@ -1,6 +1,7 @@
 Laima::Application.routes.draw do
 
   get "sessions/new"
+  match "/clients" => "clients#index", :as => :clients
 
 
   resources :users
