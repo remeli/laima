@@ -78,7 +78,39 @@
       margin-bottom:10px;
     }
   }
+  .clear{
+    clear:both;
+  }
+  .flash-notice{
+    color:#fff;
+    padding:5px;
+    background:#8ACE61;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -o-border-radius:5px;
+  }
+  .admin-form{
+    margin:20px 0px 5px 0px;
+    #errorExplanation{
+      margin:10px 0px;
+      color:#9C1E11;
+      h1{
+        font: 1.2em/1.5em Arial, Tahoma, sans-serif;
+      }
+    }
+    h1{
+      font: 1.4em/1.5em Arial, Tahoma, sans-serif;
+    }
+    .field{
+      margin:10px 0px;
+      label{
+        font: 0.9em/1.5em Arial, Tahoma, sans-serif;
+        display: inline-block;
+        width:200px;
+        float:left;
+      }
+    }
+  }
 }
-.clear{
-  clear:both;
-}
+
