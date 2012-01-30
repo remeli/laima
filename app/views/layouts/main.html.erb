@@ -7,10 +7,13 @@
   <div id="wrapper">
     <%= render 'layouts/header' %>
     <%= render 'layouts/mainmenu' %>
-    <div id="main-content">
+    <%= render 'layouts/slider' %>
+    
+    <div id="main-content"> 
       <!-- our works   -->
         <%= render 'layouts/our-works' %>
       <!-- end our workds -->
+      
       <!-- sidebar -->
         <%= render 'layouts/sidebar' %>
       <!-- end sidebar -->
@@ -18,6 +21,7 @@
       <!-- content -->
       <div id="content">
         <%= yield %>
+        <%= render 'layouts/regions' %>
       </div>
       <!-- end content -->
       
