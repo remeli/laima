@@ -3,8 +3,8 @@
   
   <%= f.price %>
   <%= f.service_id %>
-  <%= link_to "Изменить", edit_admin_prices_path  %>
-  <%= link_to "Удалить", admin_prices_path, :method => :delete, :confirm => {:notice =>"Вы уверены?" } %>
+  <%= link_to "Изменить", edit_admin_prices_path(f)  %>
+  <%= link_to "Удалить", admin_prices_path(f), :method => :delete, :confirm => {:notice =>"Вы уверены?" } %>
 <% end %>
 <%= paginate @prices %>
 <%= button_to "Добавить цену", new_admin_prices_path, :method => :get %>
