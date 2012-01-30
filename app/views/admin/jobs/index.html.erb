@@ -2,7 +2,7 @@
   <%= notice_msg(flash[:notice]) %>
   <% @jobs.each do |j| %>
     <li class="job">
-      <h1><%= link_to j.title, j %></h1>
+      <h1><%= link_to j.title, admin_job_path(j) %></h1>
       <p class="image"><%= image_tag j.image.url(:thumb) %></p>
       <div class="actions">
         <%= link_to eye_icon, admin_job_path(j) %>
@@ -11,7 +11,8 @@
       </div>
     </li>
   <% end %>
+  <div class="clear"></div>
   <div class="add-button">
-    <%= button_to "Добавить", new_admin_job_path, :method => :get %>
+    <%= button_to "Добавить работу", new_admin_job_path, :method => :get %>
   </div>
 </ul>

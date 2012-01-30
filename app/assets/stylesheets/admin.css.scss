@@ -58,7 +58,27 @@
     }
   }
   .add-button{
-    clear:both;
-    text-align:right;
+    margin-left:20px;
+    margin-top:20px;
   }
+  .job-show{
+    .title{
+      font: 1.7em/1.5em Arial, Tahoma, sans-serif
+    }
+    .image img{
+      width:164px;
+      height:134px;
+    }
+    .description{
+      margin:10px 0px;
+      font: 0.9em/1.5em Arial, Tahoma, sans-serif
+    }
+    .created_at{
+      font: 0.8em/1.5em Arial, Tahoma, sans-serif;
+      margin-bottom:10px;
+    }
+  }
+}
+.clear{
+  clear:both;
 }
