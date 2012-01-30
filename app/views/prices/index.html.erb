@@ -1,0 +1,13 @@
+<% @prices.each do |f| %>
+  <%= notice_msg(flash[:notice]) %>
+  <table>
+    <tr>
+      <td>Услуга</td>
+      <td>Цена</td>
+    </tr>
+    <tr>
+      <td><%= f.price %></td>
+      <td> <%= f.service_id %></td>
+    </tr>   
+  </table>
+<% end %>

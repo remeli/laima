@@ -2,9 +2,29 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title>Админка</title>
+  <title>Админ панель</title>
+  <%= stylesheet_link_tag "admin", "reset", :media => "all" %>
+  <%= javascript_include_tag "application" %>
 </head>
 <body>
-<%= yield %>  
+  <div id="wrapperadmin">
+    <div id="header">
+       <%= link_to "Админ панель", admin_path %>
+    </div>
+    <div id="menu">
+      <ul>
+        <li><%= link_to "услуги", admin_services_path %></li>
+        <li><%= link_to "работы", admin_jobs_path %></li>
+        <li><%= link_to "цены", admin_prices_path %></li>
+        <li><%= link_to "клиенты", admin_clients_path %></li>
+      </ul>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      &copy; 2012
+    </div>
+  </div>
 </body>
 </html>

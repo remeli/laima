@@ -1,0 +1,16 @@
+<%= form_for([:admin,@price]) do |f| %>
+  <%= errors_for_object(@price) %>
+  <div class="field">
+    <%= f.label :price, "Цена" %>
+    <%= f.text_field :price %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :service_id, "Услуга" %>
+    <%= f.collection_select(:service_id, Service.all, :id, :title) %>
+  </div>
+  
+  <div class="submit">
+    <%= f.submit @price.button_value  %>
+  </div>  
+<% end %>

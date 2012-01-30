@@ -2,9 +2,15 @@
   <h2><%= f.title %></h2>
   <%=image_tag f.logo.url(:thumb) %>
   <%= f.description %>
-  <%= link_to 'Просмотреть', f %>
+  <%= link_to 'Просмотреть', admin_client_path(f) %>
+  <%= link_to 'Редактировать', edit_admin_client_path(f)  %>
   <br/>
 <% end %>
 
-<%= link_to 'Добавить клиента', admin_new_client_path(@client) %>
+
+<%= link_to 'Добавить клиента', new_admin_client_path %>
+<div class="pagination">
+    <%= paginate @clients %>
+  </div>
+
 

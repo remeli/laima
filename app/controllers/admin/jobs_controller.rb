@@ -2,9 +2,10 @@
 class Admin::JobsController < ApplicationController
   before_filter :access
   respond_to :html
+  layout 'admin'
   
   def index
-    @jobs = Job.all
+    @jobs = Job.page(params[:page]).per(6)
     respond_with @jobs
   end
   
@@ -27,7 +28,7 @@ class Admin::JobsController < ApplicationController
     @job = Job.new(params[:job])
     if @job.save
       flash[:notice] = "Работа успешно добавлена"
-      respond_with(@job, :location => jobs_path)
+      respond_with(@job, :location => admin_jobs_path)
     else
       render 'new'
     end
@@ -37,17 +38,18 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
     if @job.update_attributes(params[:job])
       flash[:notice] = "Работа успешно обновлена"
-      respond_with(@job, :location => jobs_path)
+      respond_with(@job, :location => admin_jobs_path)
     else
       render 'edit'
     end
   end
   
-  def delete
+  def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to(jobs_path, :notice => "Работа успешно удалена")
+    redirect_to(admin_jobs_path, :notice => "Работа успешно удалена")
   end
 end
 
 # todo: добавить удаление создание во вьюхах
+# todo: сделать 20 рандомных в слайдере

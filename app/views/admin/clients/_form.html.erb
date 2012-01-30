@@ -1,13 +1,22 @@
-<%= form_for @client, :html => { :multipart =>true } do |f| %>
-<%= errors_for_object(@client) %>
-  <%= f.label :title, "Название организации" %><br/>
-  <%= f.text_field :title %><br/>
+<%= form_for([:admin, @client], :html => { :multipart =>true }) do |f| %>
+  <%= errors_for_object(@client) %>
   
-  <%= f.label :description, "Описание" %><br/>
-  <%= f.text_area :description %><br/>
+  <div class="field">
+  <%= f.label :title, "Название организации" %>
+  <%= f.text_field :title %>
+  </div>
   
-  <%= f.file_field :logo %><br/>
+  <div class="field">
+  <%= f.label :description, "Описание" %>
+  <%= f.text_area :description %>
+  </div>
   
+  <div class="field">
+  <%= f.file_field :logo %>
+  </div>
+  
+  <div class="submit">  
   <%= f.submit @client.button_value %>
+  </div>
 <% end %>
 

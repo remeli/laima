@@ -5,7 +5,7 @@ class Service < ActiveRecord::Base
   has_one :price  
 
 
-  attr_accessible :title, :description
+  attr_accessible :title, :description, :short_description ,:photo  
   
   # relations:
   has_many :jobs, :dependent => :destroy
@@ -15,9 +15,11 @@ class Service < ActiveRecord::Base
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
   
-  validates_attachment_size :image, :less_than => 5.megabytes
-  validates_attachment_content_type :image, :content_type => ['image/jpeg',
+  validates_attachment_size :photo, :less_than => 5.megabytes
+  
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg',
                                     'image/png', 'image/gif']
+                                    
   validates :title, :presence => true, :length => {:maximum => 140}
   validates :description, :presence => true, :length => {:maximum => 800}
   validates :short_description, :presence => true, :length => {:maximum => 250}
@@ -32,6 +34,10 @@ class Service < ActiveRecord::Base
     else
       "Редактировать"
     end
+  end
+  
+  def self.random
+    find(:all).sample(20)
   end
   
 end

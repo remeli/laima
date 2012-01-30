@@ -2,9 +2,11 @@
 class Admin::PricesController < ApplicationController
   before_filter :access
   respond_to :html
+  layout 'admin'
   
   def index
-    @prices = Price.all
+    @prices = Price.page(params[:page]).per(7)
+    @services = Service.all
     respond_with @prices
   end
   
@@ -46,7 +48,6 @@ class Admin::PricesController < ApplicationController
   def destroy
     @price = Price.find(params[:id])
     @price.destroy
-    flash[:notice] = "Цена успешно удалена!"
-    redirect_to @price    
+    redirect_to(@price, :notice => "Цена успешно удалена!")    
   end
 end

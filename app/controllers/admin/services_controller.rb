@@ -3,6 +3,7 @@
 class Admin::ServicesController < ApplicationController
   before_filter :access
   respond_to :html
+  layout 'admin'
   
   def index
     @services = Service.all
@@ -28,7 +29,7 @@ class Admin::ServicesController < ApplicationController
     @service = Service.new(params[:service])
     if @service.save
       flash[:notice] = "Услуга успешно добавлена"
-      respond_with(@service, :location => admin_service_path(@service))
+      respond_with(@service, :location => admin_services_path)
     else
       render 'new'
     end
@@ -38,7 +39,7 @@ class Admin::ServicesController < ApplicationController
     @service = Service.find(params[:id])
     if @service.update_attributes(params[:service])
       flash[:notice] = "Услуга успешно обновлена"
-      respond_with(@service, :location => admin_service_path(@service))
+      respond_with(@service, :location => admin_services_path)
     else
       render 'edit'
     end
