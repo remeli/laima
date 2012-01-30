@@ -1,29 +1,21 @@
 <%= form_for([:admin, @service], :html => { :multipart => true }) do |f| %>
-  <ul>
-    <li>
-      <%= f.label :title, "Название:" %>
-    </li>
-    <li>
-      <%= f.text_field :title %>
-    </li>
-    <li>
-      <%= f.label :short_description, "Краткое описание:" %>
-    </li>
-    <li>
-      <%= f.text_area :short_description %>
-    </li>
-    <li>
-      <%= f.label :description, "Описание:" %>
-    </li>
-    <li>
-      <%= f.text_area :description %>
-    </li>
-    <li>
-      <%= f.file_field :photo %> 
-    </li>
-    <br /><br /><br />
-    <li>
-      <%= f.submit @service.button_value %>
-    </li>
-  </ul>
+  <div class="field">
+    <%= f.label :title, "Название:" %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :short_description, "Краткое описание:" %>
+    <%= f.text_area :short_description %>
+  </div>
+  <div class="field">
+    <%= f.label :description, "Описание:" %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :photo, "Фотография:" %>
+    <%= f.file_field :photo %>
+  </div>
+  <div class="submit">
+    <%= f.submit @service.button_value %>
+  </div>
 <% end %>
