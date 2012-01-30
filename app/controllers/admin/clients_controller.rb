@@ -46,7 +46,6 @@ class Admin::ClientsController < ApplicationController
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
-    flash[:notice] = "Клиент успешно удален!"
-    redirect_to @client
+    redirect_to(@client, :notice => "Клиент успешно удален!")
   end
 end
