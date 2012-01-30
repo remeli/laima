@@ -4,7 +4,7 @@ class Admin::JobsController < ApplicationController
   layout 'admin'
   
   def index
-    @jobs = Job.all
+    @jobs = Job.page(params[:page]).per(6)
     respond_with @jobs
   end
   
