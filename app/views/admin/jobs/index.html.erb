@@ -15,4 +15,7 @@
   <div class="add-button">
     <%= button_to "Добавить работу", new_admin_job_path, :method => :get %>
   </div>
+  <div class="pagination">
+    <%= paginate @jobs %>
+  </div>
 </ul>
