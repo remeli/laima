@@ -4,17 +4,17 @@ class JobsController < ApplicationController
   
   def index
     @jobs = Job.all
-    respond_to @jobs
+    respond_with @jobs
   end
   
   def show
     @job = Job.find(params[:id])
-    respond_to @job
+    respond_with @job
   end
   
   def new
     @job = Job.new
-    respond_to @job
+    respond_with @job
   end
   
   def edit
