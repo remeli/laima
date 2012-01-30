@@ -1,5 +1,6 @@
 #encoding: UTF-8
 class Admin::PricesController < ApplicationController
+  before_filter :access
   respond_to :html
   layout 'admin'
   
