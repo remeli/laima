@@ -1,8 +1,20 @@
 Laima::Application.routes.draw do
 
+<<<<<<< HEAD
+  get "sessions/new"
+
+
+  resources :prices
+
+  resources :clients
+
+=======
+>>>>>>> bek
   resources :users
   resources :services
   resources :jobs
+  resources :users
+  resources :sessions 
 
   
   #static pages
@@ -69,6 +81,9 @@ Laima::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
   root :to => 'pages#index'
+  match "/sign_up" => "users#new", :as => :sign_up
+  match "/sign_in" => "sessions#new", :as => :sign_in
+  
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
