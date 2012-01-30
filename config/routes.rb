@@ -1,4 +1,6 @@
 Laima::Application.routes.draw do
+  resources :clients
+
   resources :services
 
   #get "pages/index"
