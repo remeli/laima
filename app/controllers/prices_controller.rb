@@ -6,9 +6,4 @@ class PricesController < ApplicationController
     @prices = Price.all
     respond_with @prices    
   end
-  
-  def show
-    @price = Price.find(params[:id])
-    respond_with @price    
-  end
 end
