@@ -1,5 +1,5 @@
 # encoding:utf-8
-class JobsController < ApplicationController
+class Admin::JobsController < ApplicationController
   respond_to :html
   
   def index

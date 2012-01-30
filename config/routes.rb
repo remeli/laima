@@ -1,12 +1,16 @@
 Laima::Application.routes.draw do
   resources :users
-
-  resources :services
-  resources :jobs
-
   
   #static pages
   match "/contacts" => "pages#contacts", :as => :contacts
+  
+
+  # admin:
+  match "admin" => "admin#index", :as => :admin 
+  namespace :admin do
+    resources :services
+    resources :jobs
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

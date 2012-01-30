@@ -1,5 +1,9 @@
 class Job < ActiveRecord::Base
-  attr_accessible :title, :description, :image
+
+  attr_accessible :title, :description, :image, :service_id
+
+  # relations:
+  belongs_to :service
   
   # validates
   validates :title, :presence => true
