@@ -1,5 +1,6 @@
 <div id="services-admin">
   <h1 class="title">Услуги</h1>
+  <%= notice_msg(flash[:notice]) %>
   <% @services.each do |s| %>  
     <div class="one-service">
       <h2><%= s.title %></h2>
