@@ -4,7 +4,7 @@ class Admin::ClientsController < ApplicationController
   layout 'admin'  
   
   def index
-    @clients = Client.all
+    @clients = Client.page(params[:page]).per(7)
     respond_with @clients    
   end
   

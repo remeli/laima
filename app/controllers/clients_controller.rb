@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
   respond_to :html
   
   def index
-    @clients = Client.all
+    @clients = Client.page(params[:page]).per(7)
     respond_with @clients   
   end
   
