@@ -201,14 +201,13 @@ html,body{
 }
 /* our works */
 #our-works{
-  height:221px;
-  margin-bottom:5px;
+  height:231px;
+
 }
 #our-works-header{
   height:37px;
   margin-top:10px;
   border-bottom:1px solid #ddd;
-  margin-bottom:25px;
 }
 #our-works #our-works-header h1{
   font: 22px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
@@ -228,6 +227,7 @@ html,body{
   cursor:pointer;
 }
 #our-works .img-works{
+  margin-top:20px !important;
   clear:both;
   height:157px;
 }
