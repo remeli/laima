@@ -1,5 +1,6 @@
 #encoding: UTF-8
 class Admin::ClientsController < ApplicationController
+  before_filter :access
   respond_to :html
   
   def index

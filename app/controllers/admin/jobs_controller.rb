@@ -1,5 +1,6 @@
 # encoding:utf-8
 class Admin::JobsController < ApplicationController
+  before_filter :access
   respond_to :html
   
   def index
