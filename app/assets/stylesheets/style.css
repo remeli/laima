@@ -148,21 +148,21 @@ html,body{
   float:left;
   width:440px;
   height:360px;
-  background:url('woman.png') no-repeat 15px bottom;
 }
 .slider-text{
-  width:220px;
-  margin-left:250px;
+  width:370px;
+  margin-left:90px;
+  margin-top:60px;
   text-align:left;
 }
 .slider-text h1{
-  font: 20px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
+  font: 28px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
   margin-bottom:10px;
   margin-top:5px;
 }
 .slider-text h3{
   margin:15px 0px;
-  font: 16px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
+  font: 18px/1.2em "Arial Narrow", Arial, Tahoma, sans-serif;
 }
 .slider-text p{
   font: 12px/14px Tahoma,Arial,sans-serif;
@@ -211,9 +211,9 @@ html,body{
 #our-works #our-works-header h1{
   font: 22px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
   float:left;
-  height:28px;  
+  height:28px;
   width:250px;
-  background:url('our-work-icon.png') no-repeat 170px top;
+  background:url('our-work-icon.png') no-repeat 150px top;
 }
 #our-works #our-works-header #arrows-works{
   float:right;
