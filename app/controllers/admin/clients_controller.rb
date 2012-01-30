@@ -1,5 +1,5 @@
 #encoding: UTF-8
-class ClientsController < ApplicationController
+class Admin::ClientsController < ApplicationController
   respond_to :html
   
   def index

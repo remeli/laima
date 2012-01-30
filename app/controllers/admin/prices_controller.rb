@@ -1,5 +1,5 @@
 #encoding: UTF-8
-class PricesController < ApplicationController
+class Admin::PricesController < ApplicationController
   respond_to :html
   
   def index
@@ -26,7 +26,7 @@ class PricesController < ApplicationController
     @price = Price.find(params[:price])
     if @price.save
       flash[:notice] = "Цена успешно добавлена!"
-      respond_with @price
+      respond_with(@price, :location => prices_path)
     else
       render 'new'      
     end
@@ -36,7 +36,7 @@ class PricesController < ApplicationController
     @price = Price.find(params[:id])
     if @price.update_attributes(params[:price])
       flash[:notice] = "Цена успешно обновлена!"
-      respond_with @price
+      respond_with(@price, :location => prices_path)
     else
       render 'edit'      
     end

@@ -1,12 +1,6 @@
 Laima::Application.routes.draw do
 
-  resources :prices
-
-  resources :clients
-
   resources :users
-
-
   resources :services
   resources :jobs
 
@@ -20,6 +14,8 @@ Laima::Application.routes.draw do
   namespace :admin do
     resources :services
     resources :jobs
+    resources :prices
+    resources :clients
   end
 
   # The priority is based upon order of creation:
