@@ -1,6 +1,6 @@
 <ul>
   <li><%= link_to service.title, service_path(service) %></li>
-  <li><%= service.description %></li>
+  <li><%= service.short_description %></li>
   <li>
     <%= link_to "Редактировать", edit_service_path(service) %>
     <%= link_to "Удалить", service, :method => :delete, 
