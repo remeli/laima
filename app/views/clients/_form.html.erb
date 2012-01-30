@@ -1,0 +1,11 @@
+<%= form_for @client, :html => { :multipart =>true } do |f| %>
+  <%= f.label :title, "Название организации" %>
+  <%= f.text_field :title %>
+  
+  <%= f.label :description, "Описание" %>
+  <%= f.text_area :description %>
+  
+  <%= f.file_field :logo %>
+  
+  <%= f.submit @client.button_value %>
+<% end %>
