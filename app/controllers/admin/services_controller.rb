@@ -3,6 +3,7 @@
 class Admin::ServicesController < ApplicationController
   
   respond_to :html
+  layout 'admin'
   
   def index
     @services = Service.all
