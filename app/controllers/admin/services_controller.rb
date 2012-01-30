@@ -1,6 +1,6 @@
 #encoding: UTF-8
 
-class ServicesController < ApplicationController
+class Admin::ServicesController < ApplicationController
   
   respond_to :html
   
