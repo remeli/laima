@@ -2,8 +2,8 @@ Laima::Application.routes.draw do
   resources :users
 
   resources :services
+  resources :jobs
 
-  #get "pages/index"
   
   #static pages
   match "/contacts" => "pages#contacts", :as => :contacts
