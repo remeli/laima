@@ -1,3 +1,51 @@
 #encoding: UTF-8
 class ClientsController < ApplicationController
+  respond_to :html
+  
+  def index
+    @clients = Client.all
+    respond_with @clients    
+  end
+  
+  def show
+    @client = Client.find(params[:id])
+    respond_with @client    
+  end
+  
+  def new
+    @client = Client.new
+    respond_with @client    
+  end
+  
+  def create
+    @client = Client.new(params[:client])
+    if @client.save
+      flash[:notice] = "Клиент успешно добавлен!"
+      respond_with @client
+    else
+      render 'new'
+    end    
+  end
+  
+  def edit
+    @client = Client.find(params[:id])
+    respond_with @client    
+  end
+  
+  def update
+    @client = Client.find(params[:id])
+    if @client.update_attributes(params[:client])
+      flash[:notice] = "Клиент успешно обновлен!"
+      respond_with @client
+    else
+      render 'edit'
+    end        
+  end
+  
+  def destroy
+    @client = Client.find(params[:id])
+    @client.destroy
+    flash[:notice] = "Клиент успешно удален!"
+    redirect_to @client
+  end
 end
