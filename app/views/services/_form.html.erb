@@ -1,13 +1,27 @@
-<%= form_for(@service) do |f| %>
+<%= form_for @service, :html => { :multipart => true } do |f| %>
   <ul>
     <li>
       <%= f.label :title, "Название:" %>
+    </li>
+    <li>
       <%= f.text_field :title %>
     </li>
     <li>
+      <%= f.label :short_description, "Краткое описание:" %>
+    </li>
+    <li>
+      <%= f.text_area :short_description %>
+    </li>
+    <li>
       <%= f.label :description, "Описание:" %>
+    </li>
+    <li>
       <%= f.text_area :description %>
     </li>
+    <li>
+      <%= f.file_field :photo %> 
+    </li>
+    <br /><br /><br />
     <li>
       <%= f.submit @service.button_value %>
     </li>
