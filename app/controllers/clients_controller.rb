@@ -18,7 +18,7 @@ class ClientsController < ApplicationController
   end
   
   def create
-    @client = Client.new(params[:client])
+    @client = Client.create(params[:client])
     if @client.save
       flash[:notice] = "Клиент успешно добавлен!"
       respond_with @client

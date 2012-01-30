@@ -1,4 +1,10 @@
 <% @clients.each do |f| %>
-  <%= f.title %>
+  <h2><%= f.title %></h2>
+  <%= f.logo.url(:thumb) %>
   <%= f.description %>
+  <%= link_to 'Просмотреть', f  %>
+  <br/>
 <% end %>
+
+<%= link_to 'Добавить клиента', new_client_path %>
+
