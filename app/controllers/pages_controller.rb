@@ -1,6 +1,7 @@
 # encoding:utf-8
 class PagesController < ApplicationController
   def index
+    render :layout => "main"
     @title = "LAIMA - Профессиональная наружная реклама"
   end
   
