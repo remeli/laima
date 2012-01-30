@@ -1,4 +1,5 @@
 <%= form_for([:admin, @service], :html => { :multipart => true }) do |f| %>
+  <%= errors_for_object(@service) %>
   <div class="field">
     <%= f.label :title, "Название:" %>
     <%= f.text_field :title %>
