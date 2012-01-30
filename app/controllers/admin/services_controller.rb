@@ -28,7 +28,7 @@ class Admin::ServicesController < ApplicationController
     @service = Service.new(params[:service])
     if @service.save
       flash[:notice] = "Услуга успешно добавлена"
-      respond_with(@service, :location => service_path(@service))
+      respond_with(@service, :location => admin_service_path(@service))
     else
       render 'new'
     end
@@ -38,7 +38,7 @@ class Admin::ServicesController < ApplicationController
     @service = Service.find(params[:id])
     if @service.update_attributes(params[:service])
       flash[:notice] = "Услуга успешно обновлена"
-      respond_with(@service, :location => service_path(@service))
+      respond_with(@service, :location => admin_service_path(@service))
     else
       render 'edit'
     end
@@ -48,7 +48,7 @@ class Admin::ServicesController < ApplicationController
     @service = Service.find(params[:id])
     @service.destroy
     flash[:notice] = "Услуга успешно удалена"
-    redirect_to services_path
+    redirect_to admin_services_path
   end
   
 end
