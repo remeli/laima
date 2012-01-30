@@ -1,4 +1,4 @@
-#wrapper{
+#wrapperadmin{
   width:1000px;
   margin:0 auto;
   #header{
@@ -7,25 +7,54 @@
     padding-top:30px;
     font: 1.7em/1.5em "Arial Narrow", helvetica, verdana, arial, times, "Times New Roman", sans-serif
   }
-}
-a{
-  color:#4D4D4D;
-}
-#menu{
-  font: 1.0em/1.5em Georgia, "Lucida Grande", "Lucida Sans Unicode", helvetica, verdana, arial, times, "Times New Roman", sans-serif;
-  height:40px;
-  ul li{
-    float:left;
-    margin-right:10px;
-    padding-top:10px;
+  a{
+    color:#4D4D4D;
   }
-}
-#content{
-  clear:both;
-  padding:5px;
-}
-#footer{
-  clear:both;
-  height:60px;
-  font: 0.7em/1.5em Arial, "Times New Roman", sans-serif
+  #menu{
+    font: 1.0em/1.5em Georgia, "Lucida Grande", "Lucida Sans Unicode", helvetica, verdana, arial, times, "Times New Roman", sans-serif;
+    height:40px;
+    ul li{
+      float:left;
+      margin-right:10px;
+      padding-top:10px;
+    }
+  }
+  #content{
+    clear:both;
+    padding:5px;
+    font: 0.8em/1.5em Arial, Tahoma, sans-serif;
+  }
+  #footer{
+    clear:both;
+    margin-top:100px;
+    height:60px;
+    font: 0.7em/1.5em Arial, "Times New Roman", sans-serif
+  }
+  .jobs{
+    li{
+      h1{
+        font-size:1.2em;
+        margin-bottom:5px;
+      }
+      .image{
+        img{
+          width:164px;
+          height:134px;
+        }  
+      }
+      
+      float:left;
+      margin:15px;
+      width:300px;
+    }
+  }
+  .actions{
+    a{
+      margin-left:5px;
+    }
+    img{
+      width:12px;
+      height:12px;
+    }
+  }
 }

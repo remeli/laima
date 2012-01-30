@@ -1,6 +1,7 @@
 # encoding:utf-8
 class Admin::JobsController < ApplicationController
   respond_to :html
+  layout 'admin'
   
   def index
     @jobs = Job.all
@@ -42,11 +43,12 @@ class Admin::JobsController < ApplicationController
     end
   end
   
-  def delete
+  def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to(jobs_path, :notice => "Работа успешно удалена")
+    redirect_to(admin_jobs_path, :notice => "Работа успешно удалена")
   end
 end
 
 # todo: добавить удаление создание во вьюхах
+# todo: сделать 20 рандомных в слайдере

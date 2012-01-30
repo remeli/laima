@@ -1,6 +1,7 @@
 #encoding: UTF-8
 class Admin::ClientsController < ApplicationController
   respond_to :html
+  layout 'admin'  
   
   def index
     @clients = Client.all
