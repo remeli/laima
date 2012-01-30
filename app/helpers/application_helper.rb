@@ -8,4 +8,21 @@ module ApplicationHelper
     end
   end
   
+  def eye_icon
+    image_tag "/assets/eye-icon.png"
+  end
+  
+  def edit_icon
+    image_tag "/assets/edit-icon.png"
+  end
+
+  def delete_icon
+    image_tag "/assets/delete-icon.gif"
+  end
+  
+  def notice_msg(object)
+    render :partial => "shared/notice", :locals => {:object => object}
+  end
+
+  
 end
