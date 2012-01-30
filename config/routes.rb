@@ -1,15 +1,8 @@
 Laima::Application.routes.draw do
 
-<<<<<<< HEAD
   get "sessions/new"
 
 
-  resources :prices
-
-  resources :clients
-
-=======
->>>>>>> bek
   resources :users
   resources :services
   resources :jobs
