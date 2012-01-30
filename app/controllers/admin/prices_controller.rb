@@ -26,7 +26,7 @@ class Admin::PricesController < ApplicationController
     @price = Price.find(params[:price])
     if @price.save
       flash[:notice] = "Цена успешно добавлена!"
-      respond_with(@price, :location => prices_path)
+      respond_with(@price, :location => admin_prices_path)
     else
       render 'new'      
     end
@@ -36,7 +36,7 @@ class Admin::PricesController < ApplicationController
     @price = Price.find(params[:id])
     if @price.update_attributes(params[:price])
       flash[:notice] = "Цена успешно обновлена!"
-      respond_with(@price, :location => prices_path)
+      respond_with(@price, :location => admin_prices_path)
     else
       render 'edit'      
     end
