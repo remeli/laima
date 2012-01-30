@@ -1,0 +1,6 @@
+<% @clients.each do |f| %>
+  <h1><%= f.title %></h1>
+  <%= image_tag f.logo.url(:thumb) %>
+  <%= f.description %>
+  <%= link_to 'Просмотр', f  %>
+<% end %>
