@@ -1,7 +1,7 @@
 #encoding: UTF-8
 
 class Service < ActiveRecord::Base
-  
+  has_one :price  
   has_attached_file :photo, :styles => { :small => "150x150>" },
                     :url => "/assets/services/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/services/:id/:style/:basename.:extension"
