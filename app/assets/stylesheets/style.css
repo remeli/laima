@@ -202,11 +202,13 @@ html,body{
 /* our works */
 #our-works{
   height:221px;
+  margin-bottom:5px;
 }
 #our-works-header{
   height:37px;
   margin-top:10px;
   border-bottom:1px solid #ddd;
+  margin-bottom:25px;
 }
 #our-works #our-works-header h1{
   font: 22px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
@@ -219,12 +221,14 @@ html,body{
   float:right;
   margin-top:5px;
 }
-#our-works #our-works-header #arrows-works img{
+#our-works #our-works-header #arrows-works span{
   margin-left:10px;
+}
+#our-works #our-works-header #arrows-works span:hover{
+  cursor:pointer;
 }
 #our-works .img-works{
   clear:both;
-  margin-top:25px;
   height:157px;
 }
 .img-works li{
