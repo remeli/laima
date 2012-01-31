@@ -20,13 +20,13 @@ html,body{
   margin-left:28px;
   float:left;
 }
-/* telephone in header */
+// /* telephone in header */
 #telephone-header{
   float:left;
   margin-left:280px;
   width:300px;
   margin-top:35px;
-/*  border:1px solid #ccc;*/
+// /*  border:1px solid #ccc;*/
 }
 #telephone-header h2{
   font-size:14px;
@@ -45,7 +45,7 @@ html,body{
 #telephone-header h2 a:hover{
   text-decoration:none;
 }
-/* download price list block*/
+// /* download price list block*/
 #price-list{
   float:left;
   height:40px;
@@ -74,7 +74,7 @@ html,body{
   text-decoration:none;
 }
 
-/* main menu */
+// /* main menu */
 #main-menu{
   clear:both;
   border:1px solid #ccc;
@@ -117,9 +117,9 @@ html,body{
   -o-border-radius: 5px 0px 0px 5px;
   background:url('background-menu-hover.png') repeat-x;
 }
-/*search in menu*/
+// /*search in menu*/
 #main-menu #search{
-/*  border:1px solid #ccc;*/
+// /*  border:1px solid #ccc;*/
   margin-top:9px;
   margin-right:10px;
   float:right;
@@ -136,7 +136,7 @@ html,body{
   background:#fff url('search-icon.png') no-repeat 200px;
 }
 
-/* SLIDER */
+// /* SLIDER */
 #slider{
   height:360px;
   margin-top:20px;
@@ -194,12 +194,12 @@ html,body{
   margin-top:170px;
   margin-right:5px;
 }
-/* main content */
+// /* main content */
 #main-content{
   padding:25px 19px 19px 19px;    
   background:url('main-content-background.png');  
 }
-/* our works */
+// /* our works */
 #our-works{
   height:231px;
 
@@ -246,14 +246,14 @@ html,body{
   width:164px;
   height:134px;
 }
-/* sidebar */
+// /* sidebar */
 #sidebar{
   float:left;
   margin-top:25px;
   width:262px;
   padding-left:5px;
 }
-/* services block */
+// /* services block */
 #services{
   margin-bottom:25px;
   padding-bottom:40px;
@@ -328,7 +328,7 @@ html,body{
 .block-online img:hover{
   opacity:0.9;
 }
-/* clear block */
+// /* clear block */
 .clear{
   clear:both;
 }
@@ -352,7 +352,7 @@ a:hover{
   float:left;
   margin-right:20px;
 }
-/* content */
+// /* content */
 #content{
   margin-top:25px;
   margin-left:300px;
@@ -384,7 +384,7 @@ a:hover{
   line-height:20px;
 }
 
-/* regions */
+// /* regions */
 #regions{
   height:295px;
   padding-bottom:18px;
@@ -423,6 +423,28 @@ a:hover{
   height:265px;
   float:left;
 }
+
+// service show page
+#service-show{
+  .title{
+    font: 22px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
+    height:26px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:4px;
+    padding-top:5px; 
+    color:#5f5f5f;
+  }
+  .short-description{
+    margin-top:17px;
+    font: 16px/1.2em Arial, Tahoma, sans-serif;
+  }
+  .full-description{
+    font:12px/1.3em Arial, Tahoma, sans-serif;
+    margin-top:15px;
+  }
+}
+
+// footer
 #footer{
   clear:both;
   text-align:center;
