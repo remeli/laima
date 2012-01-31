@@ -7,10 +7,16 @@ $(document).ready(function() {
   });
 });
 
-// lightbox
+// lightbox for jobs
 $(document).ready(function() {
   $(".img-works a").lightBox({fixedNavigation:true});
 });
+
+//  lightbox for jobs in service show page
+$(document).ready(function() {
+  $("#service-jobs a").lightBox({fixedNavigation:true});
+});
+
 
 // admin services
 $(document).ready(function() {
