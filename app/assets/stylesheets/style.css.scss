@@ -328,7 +328,6 @@ html,body{
 .block-online img:hover{
   opacity:0.9;
 }
-// /* clear block */
 .clear{
   clear:both;
 }
@@ -355,7 +354,9 @@ a:hover{
 // /* content */
 #content{
   margin-top:25px;
-  margin-left:300px;
+  float:left;
+  margin-left:20px;
+  width:670px;
 }
 .title-content{
   font: 22px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
@@ -455,9 +456,38 @@ a:hover{
     margin-top:15px;
   }
 }
+#service-jobs{
+  float:left;
+  margin:20px 0px;
+  li{
+    width:155px;
+    height:130px;
+    float:left;
+    margin:6px;
+    img{
+      width:150px;
+      height:120px;
+      -webkit-border-radius:5px;
+      -moz-border-radius:5px;
+      border-radius:5px;
+      -o-border-radius:5px;
+    }
+  }
+}
+
+// paginate
+#paginate{
+  clear:both;
+  text-align:center;
+  font-size:13px;
+  a{
+    
+  }
+}
 
 // footer
 #footer{
   clear:both;
   text-align:center;
 }
+

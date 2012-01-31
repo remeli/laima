@@ -10,3 +10,13 @@
     <%= @service.description %>
   </div>
 </div>
+<ul id="service-jobs">
+  <% @jobs.each do |j| %>
+    <li>
+      <%= image_tag j.image.url(:thumb) %>
+    </li>
+  <% end %>
+</ul>
+<div id="paginate">
+  <%= paginate @jobs %>
+</div>
