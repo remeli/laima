@@ -26,3 +26,7 @@ $(document).ready(function() {
     visible: 1
   });
 });
+
+$(document).ready(function() {
+  $('#myScrollTable').Scrollable(200, 700);
+});

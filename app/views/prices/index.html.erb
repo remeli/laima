@@ -1,13 +1,23 @@
-<% @prices.each do |f| %>
-  <%= notice_msg(flash[:notice]) %>
-  <table>
+<div id="price-index">
+  <div id="price-title">
+    <h1>Цены</h1>
+  </div>
+  
+  <table class="myScrollTable" >
+    <thead>
     <tr>
-      <td>Услуга</td>
-      <td>Цена</td>
+      <th>Услуга</th>
+      <th>Цена</th>
     </tr>
+    </thead>
+    <% @prices.each do |f| %> 
+    <tbody>
     <tr>
-      <td><%= f.price %></td>
-      <td> <%= f.service_id %></td>
-    </tr>   
+      <td><%= f.service.title %></td>
+      <td> <%= number_to_currency(f.price, :locale => :ru,  :precision => 0, :delimiter => " ") %></td>
+    </tr>
+    </tbody>   
+    <% end %>
   </table>
-<% end %>
+</div>
+
