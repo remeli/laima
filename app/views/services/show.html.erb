@@ -1,5 +1,8 @@
 <div id="service-show">
   <h1 class="title"><%= @service.title %></h1>
+  <div class="photo">
+    <%= image_tag @service.photo.url(:small) %>
+  </div>
   <div class="short-description">
     <%= @service.short_description %>
   </div>
