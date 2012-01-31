@@ -1,9 +1,22 @@
 <div id="service-show">
   <h1 class="title"><%= @service.title %></h1>
+  <div class="photo">
+    <%= image_tag @service.photo.url(:small) %>
+  </div>
   <div class="short-description">
     <%= @service.short_description %>
   </div>
   <div class="full-description">
     <%= @service.description %>
   </div>
+</div>
+<ul id="service-jobs">
+  <% @jobs.each do |j| %>
+    <li>
+      <%= image_tag j.image.url(:thumb) %>
+    </li>
+  <% end %>
+</ul>
+<div id="paginate">
+  <%= paginate @jobs %>
 </div>
