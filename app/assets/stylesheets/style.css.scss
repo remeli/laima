@@ -198,6 +198,9 @@ html,body{
   margin-top:170px;
   margin-right:5px;
 }
+.right-arrow, .left-arrow img:hover{
+  cursor: pointer;
+}
 // /* main content */
 #main-content{
   padding:25px 19px 19px 19px;    
