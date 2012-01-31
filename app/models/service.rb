@@ -37,7 +37,7 @@ class Service < ActiveRecord::Base
   end
   
   def self.random
-    find(:all).sample(5)
+    find(:all).sample(10)
   end
   
 end
