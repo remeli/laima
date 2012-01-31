@@ -26,7 +26,7 @@ class Admin::PricesController < ApplicationController
   end
   
   def create
-    @price = Price.find(params[:price])
+    @price = Price.new(params[:price])
     if @price.save
       flash[:notice] = "Цена успешно добавлена!"
       respond_with(@price, :location => admin_prices_path)
