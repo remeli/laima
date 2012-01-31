@@ -3,12 +3,12 @@ Laima::Application.routes.draw do
   get "sessions/new"
  
   resources :users
-  resources :services
+  resources :services, :only => [:show, :index]
   resources :jobs
   resources :users
   resources :sessions
-  resources :prices
-  resources :clients 
+  resources :prices, :only => [:index]
+  resources :clients, :only => [:index, :show] 
 
   
   #static pages

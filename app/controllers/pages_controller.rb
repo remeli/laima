@@ -1,8 +1,9 @@
 #encoding:utf-8
 class PagesController < ApplicationController
   def index
-    @jobs = Job.all
-    @title = "LAIMA - Профессиональная наружная реклама"
+    @jobs = Job.random
+    @sliders = Service.random
+    @title = "Главная"
     render :layout => "main"
   end
   

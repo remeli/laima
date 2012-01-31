@@ -49,7 +49,5 @@ class Admin::JobsController < ApplicationController
     @job.destroy
     redirect_to(admin_jobs_path, :notice => "Работа успешно удалена")
   end
+  
 end
-
-# todo: добавить удаление создание во вьюхах
-# todo: сделать 20 рандомных в слайдере
