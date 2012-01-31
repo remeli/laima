@@ -140,6 +140,13 @@ html,body{
 #slider{
   height:360px;
   margin-top:20px;
+  #slide-js{
+    float:left;
+    ul li{
+      float:left;
+    }    
+  }
+
 }
 .slider-content{
   float:left;
