@@ -204,8 +204,9 @@ html,body{
   margin-top:170px;
   margin-right:5px;
 }
-.right-arrow, .left-arrow img:hover{
+.right-arrow img:hover, .left-arrow img:hover{
   cursor: pointer;
+  opacity:0.7;
 }
 // /* main content */
 #main-content{
