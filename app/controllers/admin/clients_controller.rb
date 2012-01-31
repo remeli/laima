@@ -1,10 +1,11 @@
 #encoding: UTF-8
 class Admin::ClientsController < ApplicationController
+  before_filter :access
   respond_to :html
   layout 'admin'  
   
   def index
-    @clients = Client.all
+    @clients = Client.page(params[:page]).per(7)
     respond_with @clients    
   end
   
