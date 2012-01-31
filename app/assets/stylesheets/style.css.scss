@@ -140,13 +140,20 @@ html,body{
 #slider{
   height:360px;
   margin-top:20px;
+  #slide-js{
+    float:left;
+    ul li{
+      float:left;
+    }    
+  }
+
 }
 .slider-content{
   float:left;
 }
 .slider-text{
   width:360px;
-  margin-left:50px;
+  margin-left:35px;
   margin-top:60px;
   text-align:left;
   float:left;
@@ -180,6 +187,12 @@ html,body{
   height:385px;
   margin-left:40px;
   background:url('frame-service.png') no-repeat;
+  img{
+    width:412px;
+    height:338px;
+    margin-left:33px;
+    margin-top:9px;
+  }
 }
 .left-arrow{
   float:left;
@@ -190,6 +203,9 @@ html,body{
   float:right;
   margin-top:170px;
   margin-right:5px;
+}
+.right-arrow, .left-arrow img:hover{
+  cursor: pointer;
 }
 // /* main content */
 #main-content{
