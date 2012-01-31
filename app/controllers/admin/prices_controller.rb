@@ -5,6 +5,7 @@ class Admin::PricesController < ApplicationController
   
   def index
     @prices = Price.all
+    @services = Service.all
     respond_with @prices
   end
   
@@ -46,7 +47,6 @@ class Admin::PricesController < ApplicationController
   def destroy
     @price = Price.find(params[:id])
     @price.destroy
-    flash[:notice] = "Цена успешно удалена!"
-    redirect_to @price    
+    redirect_to(@price, :notice => "Цена успешно удалена!")    
   end
 end
