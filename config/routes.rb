@@ -17,11 +17,16 @@ Laima::Application.routes.draw do
 
   # admin:
   match "admin" => "admin#index", :as => :admin 
+  match "/sign_up" => "admin/users#new", :as => :sign_up
+  match "/log_in" => "admin/sessions#new", :as => :log_in
+  match "/log_out" => "admin/sessions#destroy", :as => :log_out
   namespace :admin do
     resources :services
     resources :jobs
     resources :prices
     resources :clients
+    resources :users
+    resources :sessions
   end
 
   # The priority is based upon order of creation:
@@ -75,8 +80,7 @@ Laima::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
   root :to => 'pages#index'
-  match "/sign_up" => "users#new", :as => :sign_up
-  match "/sign_in" => "sessions#new", :as => :sign_in
+  
   
   # See how all your routes lay out with "rake routes"
 
