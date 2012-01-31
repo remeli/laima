@@ -484,11 +484,22 @@ a:hover{
 
 // prices index page
 #price-index{
+  float:left;
+  margin:20px 0px;
+  #price-title{
+    font-size: 22px;
+    font-family: Arial, Tahoma, sans-serif;
+    border-bottom: 1px, solid, #ddd;
+    padding-bottom: 4px;
+    height: 26px;
+    padding-top: 5px;
+  }
 	table {
 			text-align: left;
-			font-size: 12px;
+			font-size: 18px;
 			font-family: Arial, Tahoma, sans-serif;
 			background: #c0c0c0;
+			margin: 10px;
 		}
  
 		table thead tr {
