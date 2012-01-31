@@ -1,14 +1,19 @@
 <div id="price-index">
-  <table >
+  <table id="myScrollTable" >
+    <thead>
     <tr>
-      <td>Услуга</td>
-      <td>Цена</td>
+      <th>Услуга</th>
+      <th>Цена</th>
     </tr>
+    </thead>
     <% @prices.each do |f| %> 
+    <tbody>
     <tr>
       <td><%= f.service.title %></td>
-      <td> <%= f.price %></td>
-    </tr>   
+      <td> <%= number_to_currency(f.price, :locale => :ru) %></td>
+    </tr>
+    </tbody>   
     <% end %>
   </table>
 </div>
+
