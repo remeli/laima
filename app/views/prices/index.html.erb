@@ -1,5 +1,9 @@
 <div id="price-index">
-  <table id="myScrollTable" >
+  <div id="price-title">
+    <h1>Цены</h1>
+  </div>
+  
+  <table class="myScrollTable" >
     <thead>
     <tr>
       <th>Услуга</th>
@@ -10,7 +14,7 @@
     <tbody>
     <tr>
       <td><%= f.service.title %></td>
-      <td> <%= number_to_currency(f.price, :locale => :ru) %></td>
+      <td> <%= number_to_currency(f.price, :locale => :ru,  :precision => 0, :delimiter => " ") %></td>
     </tr>
     </tbody>   
     <% end %>

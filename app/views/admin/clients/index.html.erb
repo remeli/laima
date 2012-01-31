@@ -1,16 +1,24 @@
-<% @clients.each do |f| %>
-  <h2><%= f.title %></h2>
-  <%=image_tag f.logo.url(:thumb) %>
-  <%= f.description %>
-  <%= link_to 'Просмотреть', admin_client_path(f) %>
-  <%= link_to 'Редактировать', edit_admin_client_path(f)  %>
-  <br/>
+<div class="clients">
+  <%= notice_msg(flash[:notice]) %>
+  <% @clients.each do |f| %>
+  <h1><%= link_to f.title, admin_client_path(f) %></h1>
+  
+  <p class="image"><%=image_tag f.logo.url(:thumb) %></p>
+  
+  <div class="clients-description">
+    <%= f.description %>
+  </div>
+  <div class="actions">
+    <%= link_to eye_icon, admin_client_path(f)  %>
+    <%= link_to edit_icon, edit_admin_client_path(f)  %>
+    <%= link_to delete_icon, admin_client_path(f), :method => :delete, :confirm => {:notice => "Вы уверены?" }%>
+  </div>
 <% end %>
-
+</div>
 
 <%= link_to 'Добавить клиента', new_admin_client_path %>
 <div class="pagination">
-    <%= paginate @clients %>
-  </div>
+  <%= paginate @clients %>
+</div>
 
 

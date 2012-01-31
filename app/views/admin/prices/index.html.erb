@@ -5,7 +5,7 @@
   <%= f.price %>
   <%= f.service.title %>
   <%= link_to "Изменить", edit_admin_price_path(f)  %>
-  <%= link_to "Удалить", admin_prices_path(f), :method => :delete, :confirm => {:notice =>"Вы уверены?" } %>
+  <%= link_to "Удалить", admin_price_path(f), :method => :delete, :confirm => {:notice =>"Вы уверены?" } %>
 <% end %>
 <%= paginate @prices %>
 <%= button_to "Добавить цену", new_admin_price_path, :method => :get %>

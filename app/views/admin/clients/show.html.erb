@@ -1,7 +1,5 @@
 <h1><%= @client.title %></h1>
 <%= image_tag @client.logo.url(:medium) %>
-<p>
 <%= @client.description %>
-</p>
-<%= link_to 'Редактировать', edit_admin_client_path(@client) %>
-<%= link_to 'Удалить', admin_clients_path(@client), :method => :delete, :confirm => {:notice => "Вы уверены?" }%>
+
+

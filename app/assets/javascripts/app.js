@@ -14,5 +14,5 @@ $(document).ready(function() {
   $("#services-admin .one-service:odd").addClass('odd');
 });
 $(document).ready(function() {
-$('#myScrollTable').Scrollable(200, 700);
+$(".myScrollTable").Scrollable(200, 300);
 		});

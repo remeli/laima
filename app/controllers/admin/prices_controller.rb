@@ -48,6 +48,6 @@ class Admin::PricesController < ApplicationController
   def destroy
     @price = Price.find(params[:id])
     @price.destroy
-    redirect_to(@price, :notice => "Цена успешно удалена!")    
+    redirect_to(admin_prices_path, :notice => "Цена успешно удалена!")    
   end
 end
