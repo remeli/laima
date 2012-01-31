@@ -9,7 +9,11 @@
 <body>
   <div id="wrapperadmin">
     <div id="header">
-       <%= link_to "Админ панель", admin_path %>
+       <h1><%= link_to "Админ панель", admin_path %></h1>
+       <span id="user-profile">
+       <%= current_user.email %> | 
+       <%= link_to "Выход", log_out_path %>
+       </span>
     </div>
     <div id="menu">
       <ul>
