@@ -11,7 +11,7 @@ class Service < ActiveRecord::Base
   has_many :jobs, :dependent => :destroy
   
 
-  has_attached_file :photo, :styles => { :small => "150x150>" },
+  has_attached_file :photo, :styles => { :small => "150x150>", :slider => "420x340>" },
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
   
