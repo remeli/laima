@@ -7,8 +7,8 @@ Laima::Application.routes.draw do
   resources :jobs
   resources :users
   resources :sessions
-  resources :prices
-  resources :clients 
+  resources :prices, :only => [:index]
+  resources :clients, :only => [:index, :show] 
 
   
   #static pages

@@ -498,6 +498,28 @@ a:hover{
   }
 }
 
+// prices index page
+#price-index{
+	table {
+			text-align: left;
+			font-size: 12px;
+			font-family: Arial, Tahoma, sans-serif;
+			background: #c0c0c0;
+		}
+ 
+		table thead tr {
+			background: #c0c0c0;
+		}
+ 
+		table tbody tr {
+			background: #f0f0f0;
+		}
+ 
+		td, th {
+			border: 2px solid white;
+		}
+}
+
 // footer
 #footer{
   clear:both;
