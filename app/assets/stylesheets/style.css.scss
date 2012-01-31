@@ -210,13 +210,13 @@ html,body{
 }
 // /* main content */
 #main-content{
-  padding:25px 19px 19px 19px;    
+  padding:10px 19px 19px 19px;    
   background:url('main-content-background.png');  
 }
 // /* our works */
 #our-works{
   height:231px;
-
+  margin-bottom:10px;
 }
 #our-works-header{
   height:37px;
@@ -239,6 +239,7 @@ html,body{
 }
 #our-works #our-works-header #arrows-works span:hover{
   cursor:pointer;
+  opacity:0.8;
 }
 #our-works .img-works{
   margin-top:20px !important;
@@ -263,7 +264,7 @@ html,body{
 // /* sidebar */
 #sidebar{
   float:left;
-  margin-top:25px;
+  margin-top:20px;
   width:262px;
   padding-left:5px;
 }
@@ -367,7 +368,7 @@ a:hover{
 }
 // /* content */
 #content{
-  margin-top:25px;
+  margin-top:20px;
   float:left;
   margin-left:20px;
   width:670px;
