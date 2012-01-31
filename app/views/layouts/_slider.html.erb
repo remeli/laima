@@ -1,33 +1,30 @@
 <div id="slider">
   <div class="left-arrow">
-    <%= link_to image_tag('left-arrow.png'),"#" %>
+    <%= image_tag('left-arrow.png') %>
   </div>
-  <div class="slider-content">
-    <div class="slider-text">
-      <h1>Наружная реклама</h1>
-      <h3>Изготовление и согласование 
-        рекламных конструкций всех 
-        видов, любой сложности. 
-        Мы уверены в качестве нашей 
-        работы, поэтому даем гарантию 
-        на нашу продукцию</h3>
-      <p>
-          Качественное изготовление неоновой 
-            наружной рекламы невозможно без 
-            специалистов. Только очень опытному 
-            мастеру дела известно, какие цвета 
-            вызовут приятные ассоциации, а какие 
-            употреблять в данной композиции 
-            нельзя. Можно ли сочетать на синем 
-            фоне темно-зеленые ...            
-      </p>
-      <div class="slide-text-more">
-        <a href="#">Подробнее</a>
-      </div>
-    </div>
+  <div id="slide-js">
+    <ul>
+      <% @sliders.each do |s| %>
+        <li>
+          <div class="slider-content">
+            <div class="slider-text">
+              <h1><%= s.title %></h1>
+              <h3><%= s.short_description %></h3>
+              <p><%= cut_text(s.description) %></p>
+              <div class="slide-text-more">
+                <%= link_to "Подробнее", s %>
+              </div>
+            </div>
+          </div>
+          <div class="slider-image">
+            <%= image_tag s.photo.url(:slider) %>
+          </div>        
+        </li>
+      <% end %>
+    </ul>
+    
   </div>
-  <div class="slider-image"></div>
   <div class="right-arrow">
-    <%= link_to image_tag('right-arrow.png'),"#" %>
+    <%= image_tag('right-arrow.png') %>
   </div>
 </div>

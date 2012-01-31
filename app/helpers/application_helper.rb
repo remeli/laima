@@ -33,5 +33,7 @@ module ApplicationHelper
     render :partial => "shared/notice", :locals => {:object => object}
   end
 
-  
+  def cut_text(object, length = 150)
+    truncate(object, :length => length, :separator => ' ' ,:omission => " ...")
+  end
 end
