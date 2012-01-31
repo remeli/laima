@@ -6,7 +6,7 @@ class Admin::PricesController < ApplicationController
   
   def index
     @prices = Price.page(params[:page]).per(7)
-    @services = Service.all
+    #@services = Service.all
     respond_with @prices
   end
   
@@ -16,11 +16,6 @@ class Admin::PricesController < ApplicationController
   end
   
   def edit
-    @price = Price.find(params[:id])
-    respond_with @price 
-  end
-  
-  def show
     @price = Price.find(params[:id])
     respond_with @price 
   end

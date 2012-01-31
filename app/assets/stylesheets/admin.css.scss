@@ -172,11 +172,16 @@
   // clients index page
   .clients{
     h1{
+      font: 18px Arial, Tahoma, sans-serif;
+      float:left;  
     }
-    .image img{
-      width: 100px;
-      height: 100px;
+    .image{
+      width:100px;
+      height:100px;
+      img{        
+      } 
     }
+    
   }
 }
 

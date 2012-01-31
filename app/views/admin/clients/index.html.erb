@@ -5,9 +5,6 @@
   
   <p class="image"><%=image_tag f.logo.url(:thumb) %></p>
   
-  <div class="clients-description">
-    <%= f.description %>
-  </div>
   <div class="actions">
     <%= link_to eye_icon, admin_client_path(f)  %>
     <%= link_to edit_icon, edit_admin_client_path(f)  %>
