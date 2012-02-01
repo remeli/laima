@@ -1,0 +1,10 @@
+<%= form_for([:admin, @list], :html => {:multipart => true}) do |f| %>
+  <%= errors_for_object(@list) %>
+  <div class="field">
+    <%= f.label :xls, "Прайс-лист:" %>
+    <%= f.file_field :xls %>
+  </div>
+  <div class="submit">
+    <%= f.submit "Загрузить" %>
+  </div>
+<% end %>
