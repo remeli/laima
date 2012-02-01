@@ -473,8 +473,8 @@ a:hover{
   }
 }
 #service-jobs{
-  float:left;
-  margin:20px 0px;
+  clear:both;
+  margin:-5px;
   li{
     width:155px;
     height:130px;

@@ -171,25 +171,36 @@
   
   // clients index page
   .clients{
-    float:left;
-    width: 100px;
-    height:120px;
-    margin-left:15px;
+     margin:2px;
+     height:90px;
+     width:130px;
+     float:left;
+     text-align:center;
+     margin-bottom: 30px;
     h1{
+      font: 16px Arial, Tahoma, sans-serif;
     }
     .image{
-      height:100px;
-      width:100px;
-      
-    }
-    .actions{
-      height:100px;
-      width:100px;
-    }      
+      height:80px;
+      width:120px;
+      img{
+        display:inline;
+        margin:2px;
+      }
+      a:hover{  
+        border: 1px solid #ffffff;
+      }
+      .actions{
+      }     
+    }    
   }
   .button-add{
     margin-left: 20px;
     margin-top: 20px;
+  }
+  .pagination{
+    float:left;
+    margin: 30px;
   }
 }
 
