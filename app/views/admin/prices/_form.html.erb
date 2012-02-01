@@ -7,7 +7,7 @@
   
   <div class="field">
     <%= f.label :service_id, "Услуга" %>
-    <%= f.collection_select(:service_id, Service.all, :id, :title) %>
+    <%= f.collection_select(:service_id, Service.asctitle, :id, :title) %>
   </div>
   
   <div class="submit">

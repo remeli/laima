@@ -7,7 +7,8 @@ class Client < ActiveRecord::Base
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
   validates_attachment_presence :logo
   validates_attachment_size :logo, :less_than => 5.megabytes
-  validates_attachment_content_type :logo, :content_type => ['image/jpeg', 'image/png', 'image/gif']    
+  validates_attachment_content_type :logo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
+  default_scope order('title ASC')    
   def button_value
     if new_record?
       "Добавить"
