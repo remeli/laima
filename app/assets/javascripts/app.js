@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 // main slider
 $(document).ready(function() {
-  $("#slide-js").jCarouselLite({
+  $(".slide-js").jCarouselLite({
     btnNext: ".left-arrow img",
     btnPrev: ".right-arrow img",
     visible: 1
