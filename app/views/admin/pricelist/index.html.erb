@@ -1,0 +1,12 @@
+<div class="admin-form">
+  <h1>Загрузить прайс-лист</h1>
+
+  <%= form_tag(admin_uploadprice_path, :multipart => true) do |f| %>
+    <div class="field">
+      <%= file_field_tag :file %>
+    </div>
+    <div class="submit">
+      <%= submit_tag "Загрузить" %>      
+    </div>
+  <% end %>
+</div>
