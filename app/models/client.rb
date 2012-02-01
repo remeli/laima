@@ -1,6 +1,6 @@
 #encoding: UTF-8
 class Client < ActiveRecord::Base
-  validates :title, :description, :presence => true
+  validates :title, :presence => true
   has_attached_file :logo, 
                     :styles => { :medium => "300x300>", :thumb => "120x80>" },
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
