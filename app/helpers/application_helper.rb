@@ -36,4 +36,14 @@ module ApplicationHelper
   def cut_text(object, length = 150)
     truncate(object, :length => length, :separator => ' ' ,:omission => " ...")
   end
+  
+  
+  def price_download
+    obj = load_pricelist
+    if  obj == nil
+      link_to("Скачать", "#")
+    else
+      link_to("Скачать", obj.xls.url)
+    end
+  end
 end

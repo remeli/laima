@@ -1,0 +1,17 @@
+<div id="pricelist-admin">
+  <h1>Прайс-лист:</h1>
+  <%= notice_msg(flash[:notice]) %>
+  
+  <% if @list.nil? %>
+  
+    <%= link_to "Загрузить", new_admin_list_path %>
+  <% else %>
+  <div id="pricelist">
+    <%= link_to image_tag("excel-icon.png"), @list.xls.url %>
+    <p>Последнее обновление: <%= @list.updated_at.to_date %></p>
+    <%= link_to "Обновить прайс", edit_admin_list_path(@list) %>    
+  </div>
+  <% end %>
+
+  
+</div>
