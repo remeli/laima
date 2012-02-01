@@ -8,10 +8,7 @@
     <%= f.label :service_id, "Услуга" %>
     <%= collection_select(:job, :service_id, Service.asctitle, :id, :title)%>
   </div>
-  <div class="field">
-    <%= f.label :image, "Фотография:" %>
-    <%= f.file_field :image %>
-  </div>
+  <div class="field" />
   <div class="field">
     <%= f.label :description, "Описание:" %>
     <%= f.text_area :description %>
