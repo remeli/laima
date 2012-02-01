@@ -3,11 +3,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
-  
+  helper_method :load_pricelist
   before_filter :load_services
   
   def load_services
     @services = Service.all
+  end
+
+  def load_pricelist
+    @list = List.first
   end
   
   private
