@@ -172,32 +172,43 @@
   // clients index page
   .clients{
      margin:30px 2px 2px 2px;
-     height:90px;
+     height:auto;
      width:130px;
      float:left;
      text-align:center;
     h1{
       font: 16px Arial, Tahoma, sans-serif;
     }
-    .image{
+    .logo {
       height:80px;
       width:120px;
-      img{
-        display:inline;
-        margin:2px;
-      }
-      a:hover{  
+      margin:2px;
+      img a:hover {
         border: 1px solid #ffffff;
       }     
-    }    
-  }
+    }
+  }  
+
   .button-add{
-    margin-left: 20px;
-    margin-top: 20px;
+    margin: 30px;
+    width:20px;
+    height:5px;
   }
   .pagination{
     float:left;
     margin: 30px;
+  }
+  
+  //clients show page
+  .show-client{
+    .image {
+      margin: 5px;
+    }
+    h1 {
+      font: 18px Arial, Tahoma, sans-serif;
+      text-align: left;
+    }
+    
   }
 }
 
