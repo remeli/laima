@@ -203,10 +203,20 @@
   .show-client{
     .image {
       margin: 5px;
+      float:left;
     }
     h1 {
       font: 18px Arial, Tahoma, sans-serif;
       text-align: left;
+    }
+    .description {
+      font: 14px Arial, Tahoma, sans-serif;
+      text-align: justify;
+    }
+    .actions {
+      a:hover {
+        border: 2px solid #ffffff;  
+      }
     }
     
   }
