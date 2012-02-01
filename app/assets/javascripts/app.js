@@ -38,7 +38,3 @@ $(document).ready(function() {
     });
   };
 });
-
-$(document).ready(function() {
-  $('#myScrollTable').Scrollable(200, 700);
-});
