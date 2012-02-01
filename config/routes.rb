@@ -27,6 +27,8 @@ Laima::Application.routes.draw do
     resources :clients
     resources :users
     resources :sessions
+    match "/uploadprice" => "pricelist#index", :as => :uploadindex
+    match "/pricelistcreate" => "pricelist#upload", :as => :uploadprice
   end
 
   # The priority is based upon order of creation:
