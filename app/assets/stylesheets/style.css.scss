@@ -1,3 +1,4 @@
+// Remeli.kz 2012
 html,body{
   background:#fbfbfb url('background-top.png') repeat-x;
   color:#7f8080;
@@ -211,7 +212,7 @@ html,body{
 // /* main content */
 #main-content{
   min-height:350px;
-  padding:10px 19px 19px 19px;
+  padding:10px 19px 60px 19px;
   background:url('main-content-background.png');  
 }
 // /* our works */
@@ -537,7 +538,61 @@ a:hover{
 
 // footer
 #footer{
+  // border:1px solid #ccc;
+  background:url('main-content-background.png') 7px;  
   clear:both;
-  height:133px;
-  background:url('footer-background.png') no-repeat;
+  height:110px;
+  #mainfooter{
+    height:110px;
+    background:url('footer-back.png') no-repeat;
+    .footer-contacts{
+      font-size:12px;
+      font-family:Arial, Tahoma, sans-serif;
+      float:left;
+      margin-top:45px;
+      margin-left:27px;
+      a{
+        font-weight:bold;
+        text-decoration:none;
+        color:#265e78;
+        &:hover{
+          color:#898989;
+        }
+      }
+    }
+    .center-footer{
+      width:436px;
+      height:60px;
+      float:left;
+      margin-top:45px;
+      margin-left:139px;
+      ul li{
+        float:left;
+        margin:0px 21px;
+        a{
+          font-family:"Arial Narrow", Arial, sans-serif;
+          font-size:12px;
+          font-weight:bold;
+          color:#455e77;
+        }
+      }
+      .copy{
+        clear:both;
+        font-size:11px;
+        text-align:center;
+        margin-top:25px;
+        color:#5f5f5f;
+      }
+    }
+    .counters{
+      margin-top:45px;
+      margin-left:80px;
+      float:left;
+    }
+  }
+}
+
+// fback
+#fb{
+  background:url('footer-back.png') repeat-x center bottom;
 }

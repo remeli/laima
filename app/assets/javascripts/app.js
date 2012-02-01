@@ -1,3 +1,5 @@
+// Remeli.kz 2012
+
 // slider jobs
 $(document).ready(function() {
   if( $("#our-works li").length != 0){
