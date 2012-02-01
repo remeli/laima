@@ -171,12 +171,13 @@
   
   // clients index page
   .clients{
-     margin:2px;
-     height:auto;
+     margin:30px 2px 2px 2px;
+     height:90px;
      width:130px;
      float:left;
      text-align:center;
     h1{
+      font: 16px Arial, Tahoma, sans-serif;
     }
     .image{
       height:80px;
@@ -187,18 +188,16 @@
       }
       a:hover{  
         border: 1px solid #ffffff;
-      }
-      .actions{
-        height:100px;
-        width:100px;
-      }  
-      
-    }
-      
+      }     
+    }    
   }
   .button-add{
     margin-left: 20px;
     margin-top: 20px;
+  }
+  .pagination{
+    float:left;
+    margin: 30px;
   }
 }
 

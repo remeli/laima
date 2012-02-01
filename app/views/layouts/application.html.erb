@@ -4,24 +4,26 @@
   <%= render 'layouts/head' %>
 </head>
 <body>
-  <div id="wrapper">
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/mainmenu' %>
-    <div id="main-content">
-      <!-- sidebar -->
-        <%= render 'layouts/sidebar' %>
-      <!-- end sidebar -->
-  
-      <!-- content -->
-      <div id="content">
-        <%= yield %>
+  <div id="fb">
+    <div id="wrapper">
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/mainmenu' %>
+      <div id="main-content">
+        <!-- sidebar -->
+          <%= render 'layouts/sidebar' %>
+        <!-- end sidebar -->
+
+        <!-- content -->
+        <div id="content">
+          <%= yield %>
+        </div>
+        <!-- end content -->
+
+        <div class="clear"></div>
+        <!-- footer -->      
       </div>
-      <!-- end content -->
-  
-      <div class="clear"></div>
-      <!-- footer -->
       <%= render 'layouts/footer' %>
-    </div>
-  </div>    
+    </div>    
+  </div>
 </body>
 </html>
