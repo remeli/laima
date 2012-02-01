@@ -1,10 +1,12 @@
 // slider jobs
 $(document).ready(function() {
-  $("#our-works").jCarouselLite({
-    btnNext: "#next-work",
-    btnPrev: "#prev-work",
-    visible: 5
-  });
+  if( $("#our-works li").length != 0){
+    $("#our-works").jCarouselLite({
+      btnNext: "#next-work",
+      btnPrev: "#prev-work",
+      visible: 5
+    });    
+  };
 });
 
 // lightbox for jobs
@@ -26,11 +28,13 @@ $(document).ready(function() {
 
 // main slider
 $(document).ready(function() {
-  $(".slide-js").jCarouselLite({
-    btnNext: ".left-arrow img",
-    btnPrev: ".right-arrow img",
-    visible: 1
-  });
+  if($(".slide-js li").length != 0){
+    $(".slide-js").jCarouselLite({
+      btnNext: ".left-arrow img",
+      btnPrev: ".right-arrow img",
+      visible: 1
+    });
+  };
 });
 
 $(document).ready(function() {
