@@ -1,10 +1,8 @@
 <%= notice_msg(flash[:notice]) %>
 <% @prices.each do |f| %>
-  
-  
   <%= f.price %>
   <%= f.service.title %>
-  <%= link_to "Изменить", edit_admin_price_path(f)  %>
+  <%= link_to "Изменить", edit_admin_price_path(f) %>
   <%= link_to "Удалить", admin_price_path(f), :method => :delete, :confirm => {:notice =>"Вы уверены?" } %>
 <% end %>
 <%= paginate @prices %>
