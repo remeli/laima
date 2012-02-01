@@ -171,12 +171,25 @@
   
   // clients index page
   .clients{
+    float:left;
+    width: 100px;
+    height:120px;
+    margin-left:15px;
     h1{
     }
-    .image img{
-      width: 100px;
-      height: 100px;
+    .image{
+      height:100px;
+      width:100px;
+      
     }
+    .actions{
+      height:100px;
+      width:100px;
+    }      
+  }
+  .button-add{
+    margin-left: 20px;
+    margin-top: 20px;
   }
 }
 

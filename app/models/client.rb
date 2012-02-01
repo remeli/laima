@@ -2,7 +2,7 @@
 class Client < ActiveRecord::Base
   validates :title, :description, :presence => true
   has_attached_file :logo, 
-                    :styles => { :medium => "300x300>", :thumb => "100x100>" },
+                    :styles => { :medium => "300x300>", :thumb => "120x80>" },
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
   validates_attachment_presence :logo
