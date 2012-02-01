@@ -5,7 +5,7 @@ class Admin::PricesController < ApplicationController
   layout 'admin'
   
   def index
-    @prices = Price.page(params[:page]).per(7)
+    @prices = Price.page(params[:page]).per(18)
     #@services = Service.all
     respond_with @prices
   end

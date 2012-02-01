@@ -1,9 +1,28 @@
 <%= notice_msg(flash[:notice]) %>
-<% @prices.each do |f| %>
-  <%= f.price %>
-  <%= f.service.title %>
-  <%= link_to "Изменить", edit_admin_price_path(f) %>
-  <%= link_to "Удалить", admin_price_path(f), :method => :delete, :confirm => "Вы уверены?" %>
-<% end %>
-<%= paginate @prices %>
-<%= button_to "Добавить цену", new_admin_price_path, :method => :get %>
+<div class="price">
+  <table>
+    <tr>
+      <th>Услуга</th>
+      <th>Цена</th>
+      <th id="edit-price">Изменить</th>
+      <th id="delete-price">Удалить</th>
+    </tr>
+  <% @prices.each do |f| %>
+    <tr>
+      <td><%= f.service.title %></td>
+      <td> <%= f.price %></td>
+      <td><%= link_to edit_icon, edit_admin_price_path(f), :class => "price-edit-link" %></td>
+      <td><%= link_to delete_icon, admin_price_path(f), :class => "price-delete-link", :method => :delete, :confirm => "Вы уверены?" %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>    
+ 
+
+
+<div class="pagination">
+  <%= paginate @prices %>
+</div>
+<div class="button-add">
+  <%= button_to "Добавить цену", new_admin_price_path, :method => :get %>
+</div>
