@@ -4,19 +4,18 @@
     <h1><%= link_to f.title, admin_client_path(f) %></h1>
   
     <div class="image">
-      <%=image_tag f.logo.url(:thumb) %>
-    </div>
-  
-    <div class="actions">
-      <%= link_to eye_icon, admin_client_path(f)  %>
-      <%= link_to edit_icon, edit_admin_client_path(f)  %>
-      <%= link_to delete_icon, admin_client_path(f), :method => :delete, :confirm => {:notice => "Вы уверены?" }%>
+      <%=link_to image_tag(f.logo.url(:thumb)), admin_client_path(f) %>
+      <div class="actions">
+        <%= link_to eye_icon, admin_client_path(f)  %>
+        <%= link_to edit_icon, edit_admin_client_path(f)  %>
+        <%= link_to delete_icon, admin_client_path(f), :method => :delete, :confirm => {:notice => "Вы уверены?" }%>
+      </div>
     </div>
   </div>  
 <% end %>
-<div class="button-add">
+<!--<div class="button-add">
   <%= button_to 'Добавить клиента', new_admin_client_path, :method => :get %>
-</div>
+</div>-->                         
 
 <div class="pagination">
   <%= paginate @clients %>
