@@ -551,6 +551,7 @@ a:hover{
       float:left;
       margin-top:45px;
       margin-left:27px;
+      margin-right:120px;
       a{
         font-weight:bold;
         text-decoration:none;
@@ -561,20 +562,21 @@ a:hover{
       }
     }
     .center-footer{
-      width:436px;
+      padding:0px 5px;
       height:60px;
       float:left;
-      margin-top:45px;
-      margin-left:139px;
-      ul li{
-        float:left;
-        margin:0px 21px;
-        a{
-          font-family:"Arial Narrow", Arial, sans-serif;
-          font-size:1.0em;
-          font-weight:bold;
-          color:#455e77;
-        }
+      margin:45px auto 0px auto;
+      ul{
+        li{
+          float:left;
+          margin:0px 21px;
+          a{
+            font-family:"Arial Narrow", Arial, sans-serif;
+            font-size:12px;
+            font-weight:bold;
+            color:#455e77;
+          }
+        } 
       }
       .copy{
         clear:both;
