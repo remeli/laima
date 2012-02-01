@@ -171,12 +171,11 @@
   
   // clients index page
   .clients{
-     margin:2px;
+     margin:30px 2px 2px 2px;
      height:90px;
      width:130px;
      float:left;
      text-align:center;
-     margin-bottom: 30px;
     h1{
       font: 16px Arial, Tahoma, sans-serif;
     }
@@ -189,8 +188,6 @@
       }
       a:hover{  
         border: 1px solid #ffffff;
-      }
-      .actions{
       }     
     }    
   }
