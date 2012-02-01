@@ -210,7 +210,8 @@ html,body{
 }
 // /* main content */
 #main-content{
-  padding:10px 19px 19px 19px;    
+  min-height:350px;
+  padding:10px 19px 19px 19px;
   background:url('main-content-background.png');  
 }
 // /* our works */
@@ -536,6 +537,6 @@ a:hover{
 // footer
 #footer{
   clear:both;
-  text-align:center;
+  height:133px;
+  background:url('footer-background.png') no-repeat;
 }
-
