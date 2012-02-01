@@ -503,35 +503,34 @@ a:hover{
 
 // prices index page
 #price-index{
-  float:left;
-  margin:20px 0px;
-  #price-title{
+  .price-title{
     font-size: 22px;
     font-family: Arial, Tahoma, sans-serif;
-    border-bottom: 1px, solid, #ddd;
+    border-bottom: 1px solid #c0c0c0;
     padding-bottom: 4px;
     height: 26px;
+    width: 470px;
     padding-top: 5px;
+    color:#5f5f5f;
   }
 	table {
-			text-align: left;
-			font-size: 18px;
-			font-family: Arial, Tahoma, sans-serif;
-			background: #c0c0c0;
-			margin: 10px;
-		}
- 
-		table thead tr {
-			background: #c0c0c0;
-		}
- 
-		table tbody tr {
+	  text-align: left;
+		font-size: 16px;
+		font-family: Arial, Tahoma, sans-serif;
+		background:#f0f0f0;
+		width: 470px;
+		margin-top: 21px;
+    thead tr {
+			background: #a0a0a0;
+		} 
+		tbody tr {
 			background: #f0f0f0;
+			
 		}
- 
-		td, th {
+ 		td, th {
 			border: 2px solid white;
 		}
+  }
 }
 
 // footer
