@@ -4,14 +4,15 @@
     <tr>
       <th>Услуга</th>
       <th>Цена</th>
-      <th>Операции</th>
+      <th id="edit-price">Изменить</th>
+      <th id="delete-price">Удалить</th>
     </tr>
   <% @prices.each do |f| %>
     <tr>
       <td><%= f.service.title %></td>
       <td> <%= f.price %></td>
-      <td><%= link_to edit_icon, edit_admin_price_path(f), :class => "price-edit-link" %>
-          <%= link_to delete_icon, admin_price_path(f), :class => "price-delete-link", :method => :delete, :confirm => "Вы уверены?" %></td>
+      <td><%= link_to edit_icon, edit_admin_price_path(f), :class => "price-edit-link" %></td>
+      <td><%= link_to delete_icon, admin_price_path(f), :class => "price-delete-link", :method => :delete, :confirm => "Вы уверены?" %></td>
     </tr>
   <% end %>
   </table>
