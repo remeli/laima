@@ -2,7 +2,7 @@
 
 class Service < ActiveRecord::Base
 
-  has_one :price  
+  has_one :price, :dependent => :destroy  
 
 
   attr_accessible :title, :description, :short_description ,:photo  
