@@ -3,7 +3,14 @@
     <h1 class="title-services">Услуги</h1>
     <ul>
       <% @services.each do |s| %>
-        <li><%= link_to s.title, s %></li>
+        <% if isset_sub?(s) %>
+          <li>
+            <%= link_to s.title, s %>
+            <%= raw(find_all_services(s)) %>
+          </li>
+        <% else %>  
+          <li><%= link_to s.title, s %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>

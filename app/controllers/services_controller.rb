@@ -4,6 +4,10 @@ class ServicesController < ApplicationController
 
   respond_to :html
   
+  def index
+    @title = "Услуги"
+  end
+  
   def show
     @service = Service.find(params[:id])
     @title = @service.title

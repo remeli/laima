@@ -16,6 +16,11 @@ $(document).ready(function() {
   $(".img-works a").lightBox({fixedNavigation:true});
 });
 
+// lightbox for contacts
+$(document).ready(function() {
+  $("#map-firma a").lightBox({fixedNavigation:true});
+});
+
 //  lightbox for jobs in service show page
 $(document).ready(function() {
   $("#service-jobs a").lightBox({fixedNavigation:true});
@@ -37,8 +42,4 @@ $(document).ready(function() {
       visible: 1
     });
   };
-});
-
-$(document).ready(function() {
-  $('#myScrollTable').Scrollable(200, 700);
 });
