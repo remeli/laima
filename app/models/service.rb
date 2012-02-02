@@ -5,11 +5,13 @@ class Service < ActiveRecord::Base
   has_one :price, :dependent => :destroy  
 
 
-  attr_accessible :title, :description, :short_description ,:photo  
+  attr_accessible :title, :description, :short_description ,:photo, :parent_id
   
   # relations:
   has_many :jobs, :dependent => :destroy
   
+  # scopes:
+  scope :mains, where("parent_id IS NULL")
 
   has_attached_file :photo, :styles => { :small => "150x150>", :slider => "420x340>" },
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
