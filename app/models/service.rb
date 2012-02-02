@@ -4,6 +4,7 @@ class Service < ActiveRecord::Base
 
   has_one :price, :dependent => :destroy  
 
+  acts_as_tree :order => "title"
 
   attr_accessible :title, :description, :short_description ,:photo, :parent_id
   
