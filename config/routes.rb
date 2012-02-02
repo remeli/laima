@@ -8,7 +8,8 @@ Laima::Application.routes.draw do
   resources :users
   resources :sessions
   resources :prices, :only => [:index]
-  resources :clients, :only => [:index, :show] 
+  resources :clients, :only => [:index, :show]
+  resources :search 
 
   
   #static pages
@@ -81,6 +82,7 @@ Laima::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
   root :to => 'pages#index'
+  match "/services" => "search#index"
   
   
   # See how all your routes lay out with "rake routes"

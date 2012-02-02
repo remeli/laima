@@ -7,6 +7,8 @@
         <li><%= link_to "КОНТАКТЫ", contacts_path %></li>
       </ul>
       <div id="search">
-        <input type="text" name="search" placeholder="Поиск">
+        <%= form_tag "/search", :method => :get do %>
+          <%= text_field_tag  :name, nil %>
+        <% end %>
       </div>
     </div>
