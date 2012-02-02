@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   end
   
   def contacts
-    @title = "LAIMA - Контакты"
+    @title = "Контакты"
   end
 end

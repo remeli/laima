@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_services
   
   def load_services
-    @services = Service.all
+    @services = Service.mains
   end
 
   def load_pricelist

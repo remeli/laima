@@ -4,12 +4,15 @@ class Service < ActiveRecord::Base
 
   has_one :price, :dependent => :destroy  
 
+  acts_as_tree :order => "title"
 
-  attr_accessible :title, :description, :short_description ,:photo  
+  attr_accessible :title, :description, :short_description ,:photo, :parent_id
   
   # relations:
   has_many :jobs, :dependent => :destroy
   
+  # scopes:
+  scope :mains, where("parent_id IS NULL")
 
   has_attached_file :photo, :styles => { :small => "150x150>", :slider => "420x340>" },
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
@@ -20,7 +23,8 @@ class Service < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => ['image/jpeg',
                                     'image/png', 'image/gif']
                                     
-  validates :title, :presence => true, :length => {:maximum => 140}
+  validates :title, :presence => true, :length => {:maximum => 140}, 
+    :uniqueness => true
   validates :description, :presence => true, :length => {:maximum => 800}
   validates :short_description, :presence => true, :length => {:maximum => 250}
   

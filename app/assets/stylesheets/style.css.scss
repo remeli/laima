@@ -212,7 +212,7 @@ html,body{
 // /* main content */
 #main-content{
   min-height:350px;
-  padding:10px 19px 60px 19px;
+  padding:10px 19px 30px 19px;
   background:url('main-content-background.png');  
 }
 // /* our works */
@@ -275,35 +275,48 @@ html,body{
   margin-bottom:25px;
   padding-bottom:40px;
   border-bottom:1px solid #ddd;
-}
-#services .title-services{
-  font: 22px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
-  background:url('services_icon.png') no-repeat 85px 0px;
-  height:26px;
-  width:262px;
-  border-bottom:1px solid #ddd;
-  padding-bottom:4px;
-  padding-top:5px;
-  color:#5f5f5f;
-}
-#services ul{
-  margin-top:23px;
-}
-#services ul li{
-  height:17px;
-  margin-bottom:8px;
-  background:url("list-services.png") no-repeat;
-  padding-left:28px;
-}
-#services ul li a{
-  color:#737373;
-  text-decoration:underline;
-  font-size:14px;
-  font-family:Arial, Tahoma, sans-serif;
-}
-#services ul li a:hover{
-  color:#2a90c1;
-  text-decoration:none;
+  
+  .title-services{
+    font: 22px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
+    background:url('services_icon.png') no-repeat 85px 0px;
+    height:26px;
+    width:262px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:4px;
+    padding-top:5px;
+    color:#5f5f5f;
+  }
+  .inner-list{
+    margin:10px 0px 5px 15px;
+    li{
+      background:none;
+      list-style-type:square;
+      padding-left:0px;
+      a{
+        font-size:12px;
+      }
+    }
+  }
+  ul{
+    margin-top:23px;
+    li{
+      margin-bottom:6px;
+      margin-top:2px;
+      background:url("list-services.png") no-repeat;
+      padding-left:28px;
+      padding-bottom:1px;
+      a{
+        color:#737373;
+        text-decoration:underline;
+        font-size:14px;
+        font-family:Arial, Tahoma, sans-serif;
+        &:hover{
+          color:#2a90c1;
+          text-decoration:none;
+        }
+      }
+    }
+  }
 }
 #orderphone{
   margin-top:25px;
@@ -508,32 +521,39 @@ a:hover{
 #price-index{
   .price-title{
     font-size: 22px;
-    font-family: Arial, Tahoma, sans-serif;
-    border-bottom: 1px solid #c0c0c0;
+    font-family: "Arial Narrow", Tahoma, sans-serif;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 4px;
     height: 26px;
-    width: 470px;
     padding-top: 5px;
     color:#5f5f5f;
   }
-	table {
-	  text-align: left;
-		font-size: 16px;
-		font-family: Arial, Tahoma, sans-serif;
-		background:#f0f0f0;
-		width: 470px;
-		margin-top: 21px;
-    thead tr {
-			background: #a0a0a0;
-		} 
-		tbody tr {
-			background: #f0f0f0;
-			
-		}
- 		td, th {
-			border: 2px solid white;
-		}
+  #price-table{
+    #head-info{
+      background:#EBEBEB;
+      color:#505050;
+      td{
+        font-weight: bold;
+        padding:7px 3px;  
+      }
+    }
+    margin:20px auto 0px auto;
+    width:650px;
+    border-collapse: collapse;
+    border:1px solid #ccc;
+    tr{
+      background:#fff;
+      td{
+        color:#606060;
+        border:1px solid #ccc;
+        padding:3px;
+      }
+      &:hover{
+        background:#FAFAFA;
+      }
+    }
   }
+  
 }
 
 // footer
@@ -614,20 +634,63 @@ a:hover{
     li{
       .client-title{
         margin-bottom:15px;
-        text-align:center;
         font-size:16px;
+        padding:5px;
+        background:#EEEEEE;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-radius:5px;
+        -o-border-radius:5px;
+        color:#454545;
+        text-align:center;
+        font-family: "Arial Narrow", Arial, Tahoma, sans-serif;
       }
       float:left;
       margin-right:30px;
       margin-top:50px;
       margin-bottom:10px;
       img{
-        height:90px;
-        width:100px;
+        height:100%;
+        width:100%;
         -webkit-border-radius:5px;
         -moz-border-radius:5px;
         border-radius:5px;
         -o-border-radius:5px;
+      }
+    }
+  }
+}
+
+// contacts:
+#contacts-page{
+  .contact-title{
+    font: 22px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
+    height:26px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:4px;
+    padding-top:5px; 
+    color:#5f5f5f;
+  }
+  #map-firma{
+    float:left;
+    margin:10px 20px 20px 0px;
+    img{
+      height:250px;
+      width:250px;
+      -webkit-border-radius:10px;
+      -moz-border-radius:10px;
+      border-radius:10px;
+      -o-border-radius:10px;
+    }
+  }
+  #main-contacts{
+    float:left;
+    margin:100px 0px;
+    h1{
+      font-size:15px;
+      margin-bottom:20px;
+      span{
+        color:#4B4B4B;
       }
     }
   }
