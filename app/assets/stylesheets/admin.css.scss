@@ -65,6 +65,7 @@
     }
   }
   .add-button{
+    clear:both;
     margin-left:20px;
     margin-top:20px;
   }
@@ -171,33 +172,72 @@
   
   // clients index page
   .clients{
-     margin:30px 2px 2px 2px;
-     height:90px;
+     margin:30px 2px 50px 2px;
+     height: 120px;
      width:130px;
      float:left;
      text-align:center;
+     margin-bottom: 10px;
     h1{
       font: 16px Arial, Tahoma, sans-serif;
     }
-    .image{
+    .logo {
       height:80px;
       width:120px;
-      img{
-        display:inline;
-        margin:2px;
-      }
-      a:hover{  
-        border: 1px solid #ffffff;
-      }     
-    }    
-  }
-  .button-add{
-    margin-left: 20px;
-    margin-top: 20px;
-  }
+      margin:2px;
+    }
+  }  
+
   .pagination{
     float:left;
-    margin: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left:auto;
+  }
+  
+  
+  // price index
+  .price {
+    font: 14px Arial, Tahoma, sans-serif;
+    table {
+      border-collapse:collapse;
+      width: 100%;
+      margin-top: 5px;
+      th {
+        height: 30px;
+        background-color:#87cc4b;
+        color: white;
+        padding: 5px;
+        font-weight: bold;
+      }
+      td {
+        text-align:left;
+        height: 20px;
+        vertical-align: bottom;
+        padding: 5px;
+        background-color: #cae294;  
+      }
+      th,td {
+        border: 1px solid #cab5b5;   
+      }
+      .price-edit-link, .price-delete-link  {
+        padding: 4px 10px 4px 10px;
+      }
+      #delete-price, #edit-price {
+        width: 20px;
+      } 
+    }
   }
 }
 
+// price list
+#pricelist-admin{
+ h1{
+   font-size:20px;
+   margin-top:20px;
+   margin-bottom:10px;
+ } 
+ #pricelist{
+   margin-top:20px;
+ }
+}

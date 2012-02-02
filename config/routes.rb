@@ -28,6 +28,7 @@ Laima::Application.routes.draw do
     resources :clients
     resources :users
     resources :sessions
+    resources :lists
   end
 
   # The priority is based upon order of creation:

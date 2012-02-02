@@ -5,6 +5,11 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :parent_id, "Родительская услуга:" %>
+    <%= f.collection_select :parent_id, Service.mains(:order => :title),
+        :id, :title, :include_blank => "Нет родительской" %>
+  </div>
+  <div class="field">
     <%= f.label :short_description, "Краткое описание:" %>
     <%= f.text_area :short_description %>
   </div>

@@ -36,4 +36,41 @@ module ApplicationHelper
   def cut_text(object, length = 150)
     truncate(object, :length => length, :separator => ' ' ,:omission => " ...")
   end
+  
+  
+  def price_download
+    obj = load_pricelist
+    if  obj == nil
+      link_to("Скачать", "#")
+    else
+      link_to("Скачать", obj.xls.url)
+    end
+  end
+  
+  # menu services method
+  
+  def find_all_services(obj)
+    if obj.children.size > 0
+      ret = "<ul class='inner-list'>"
+        obj.children.each do |s|
+          if s.children.size > 0
+            ret += "<li>"
+            ret += link_to(s.title, s)
+            find_all_services(s)
+            ret += "</li>"
+          else
+            ret += "<li>"
+            ret += link_to(s.title, s)
+            ret += "</li>"
+          end
+        end
+      ret += "</ul>"
+    end
+  end
+  
+  def isset_sub?(obj)
+    if obj.children.size > 0
+      true
+    end
+  end 
 end

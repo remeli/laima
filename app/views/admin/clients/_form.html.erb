@@ -2,17 +2,13 @@
   <%= errors_for_object(@client) %>
   
   <div class="field">
-  <%= f.label :title, "Название организации" %>
+  <%= f.label :title, "Название организации:" %>
   <%= f.text_field :title %>
   </div>
   
   <div class="field">
-  <%= f.label :description, "Описание" %>
-  <%= f.text_area :description %>
-  </div>
-  
-  <div class="field">
-  <label><%= f.file_field :logo %></label>
+    <%= f.label :logo, "Логотип:" %>
+    <%= f.file_field :logo %>
   </div>
   
   <div class="submit">  
