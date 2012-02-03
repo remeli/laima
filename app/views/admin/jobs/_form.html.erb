@@ -5,6 +5,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :image, "Фотография" %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
     <%= f.label :service_id, "Услуга" %>
     <%= collection_select(:job, :service_id, Service.asctitle, :id, :title)%>
   </div>
