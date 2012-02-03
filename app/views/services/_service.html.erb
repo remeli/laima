@@ -1,5 +1,5 @@
 <div id="service-show">
-  <b><%= service.title %></b>
+  <b><%= link_to service.title, service %></b>
   <div class="photo">
     <%= image_tag service.photo.url(:small) %>
   </div>
