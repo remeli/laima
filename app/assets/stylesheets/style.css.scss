@@ -479,16 +479,6 @@ a:hover{
       -o-border-radius:5px;
     }
   }
-  .photo_search{
-    float:left;
-    margin:20px 10px 5px 0px;
-    img{
-      -webkit-border-radius:5px;
-      -moz-border-radius:5px;
-      border-radius:5px;
-      -o-border-radius:5px;
-    }
-  }
   .short-description{
     margin-top:17px;
     font: 16px/1.2em Arial, Tahoma, sans-serif;
@@ -703,5 +693,18 @@ a:hover{
         color:#4B4B4B;
       }
     }
+  }
+}
+
+// search-clients
+.search-clients{
+  li{
+    h1{
+      font-weight:bold;
+      text-align:center;
+      margin-bottom:5px;
+    }
+    float:left;
+    margin:20px;
   }
 }
