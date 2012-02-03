@@ -4,9 +4,7 @@
     <% @clients.each do |c| %>
       <li>
         <h1 class="client-title"><%= c.title%></h1>
-        <div class="photo">
-          <%= image_tag c.logo.url(:thumb) %>  
-        </div>  
+          <%= image_tag c.logo.url(:thumb) %> 
       </li>
     <% end %>
   </ul>

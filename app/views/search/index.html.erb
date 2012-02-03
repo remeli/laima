@@ -3,17 +3,18 @@
   <div class="title_result">
     Результаты поиска:
   </div>
-  <div id="service-show">
-    <h1 class="title">Услуги:</h1><br />
-    <%= render @services %>
-    <% unless @services.size > 0  %>
-      <p>Не найдено</p><br />
-    <% end  %>
-    <h1 class="title">Клиенты:</h1><br />
-  <%= render @clients %>
+  <h1 class="title">Услуги:</h1><br />
+  <%= render @services %>
+  <% unless @services.size > 0  %>
+    <p>Не найдено</p><br />
+  <% end  %>
+  <h1 class="title">Клиенты:</h1><br />
   <% unless @clients.size > 0  %>
     <p>Не найдено</p>
+  <% else %>
+    <ul>
+      <%= render @clients %>    
+    </ul>
   <% end  %>
-  </div>
 </div>
 <div class="clear"></div>
