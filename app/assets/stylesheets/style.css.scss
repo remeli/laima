@@ -125,7 +125,7 @@ html,body{
   margin-right:10px;
   float:right;
 }
-#main-menu #search input{
+#main-menu #search #name{
   border:none;
   -webkit-border-radius:8px;
   -moz-border-radius:8px;
@@ -134,9 +134,23 @@ html,body{
   height:20px;
   width:200px;
   padding:0px 10px;
-  background:#fff url('search-icon.png') no-repeat 200px;
+  float:left;
 }
-
+#main-menu #search #submit-search{
+  position:relative;
+  left:-15px;
+  border:none;
+  height:20px;
+  background:#fff url('search-icon.png') no-repeat 0px;
+  width:20px;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  border-radius:8px;
+  -o-border-radius:8px;
+}
+#main-menu #search #submit-search:hover{
+  cursor:pointer;
+}
 // /* SLIDER */
 #slider{
   height:360px;
