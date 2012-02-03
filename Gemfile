@@ -24,6 +24,7 @@ end
 gem 'jquery-rails'
 gem "paperclip", "~> 2.5.2"
 gem 'kaminari'
+gem 'russian', '~> 0.6.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
