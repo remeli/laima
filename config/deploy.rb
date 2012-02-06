@@ -3,7 +3,7 @@ set :repository,  "git://github.com/remeli/laima.git"
 
 set :scm, :git
 set :user, "hosting_obl-reklama"
-set :use_sudo, :false
+set :use_sudo, false
 set :deploy_to, "/home/#{user}/projects/#{application}"
 
 
