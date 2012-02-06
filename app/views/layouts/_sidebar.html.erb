@@ -2,7 +2,7 @@
   <div id="services">
     <h1 class="title-services">Услуги</h1>
     <ul>
-      <% Service.all.each do |s| %>
+      <% @services.each do |s| %>
         <% if isset_sub?(s) %>
           <li>
             <%= link_to s.title, s %>
