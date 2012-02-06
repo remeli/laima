@@ -1,0 +1,23 @@
+<%= notice_msg(flash[:notice]) %>
+<% @clients.each do |f| %>
+  <div class="clients">
+    <h1><%= link_to f.title, edit_admin_client_path(f) %></h1>
+  
+    
+      <%=link_to image_tag(f.logo.url(:thumb)), edit_admin_client_path(f), :class => "logo" %>
+      <div class="actions">
+        <%= link_to edit_icon, edit_admin_client_path(f)  %>
+        <%= link_to delete_icon, admin_client_path(f), :method => :delete, :confirm => "Вы уверены?"%>
+      </div>
+  
+  </div>  
+<% end %>
+<div class="add-button">
+  <%= button_to 'Добавить клиента', new_admin_client_path, :method => :get %>
+</div>                         
+
+<div class="pagination">
+  <%= paginate @clients %>
+</div>
+
+

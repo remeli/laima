@@ -1,0 +1,21 @@
+<div id="our-works">
+  <div id="our-works-header">
+    <h1>Наши работы</h1>
+    <div id="arrows-works">
+      <span id="prev-work">
+        <%= image_tag('arrow-work-left.png') %>
+      </span>
+      <span id="next-work">
+        <%= image_tag('arrow-work-right.png') %>
+      </span>
+    </div>
+  </div>
+  <ul class="img-works">
+    <% @jobs.each do |j| %>
+      <li><%= link_to(
+        image_tag(j.image.url(:thumb), :title => j.title), j.image.url 
+        )%>
+      </li>
+    <% end %>
+  </ul>
+</div>

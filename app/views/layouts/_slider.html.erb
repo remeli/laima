@@ -1,0 +1,29 @@
+<div id="slider">
+  <div class="left-arrow">
+    <%= image_tag('left-arrow.png') %>
+  </div>
+  <div class="slide-js">
+    <ul>
+      <% @sliders.each do |s| %>
+        <li>
+          <div class="slider-content">
+            <div class="slider-text">
+              <h1><%= s.title %></h1>
+              <h3><%= s.short_description %></h3>
+              <p><%= cut_text(s.description) %></p>
+              <div class="slide-text-more">
+                <%= link_to "Подробнее", s %>
+              </div>
+            </div>
+          </div>
+          <div class="slider-image">
+            <%= image_tag s.photo.url(:slider) %>
+          </div>        
+        </li>
+      <% end %>
+    </ul>  
+  </div>
+  <div class="right-arrow">
+    <%= image_tag('right-arrow.png') %>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Админ панель</title>
+  <%= stylesheet_link_tag "admin", "reset", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="wrapperadmin">
+    <div id="header">
+       <h1><%= link_to "Админ панель", admin_path %></h1>
+       <span id="user-profile">
+       <%= current_user.email %> | 
+       <%= link_to "Выход", log_out_path %>
+       </span>
+    </div>
+    <div id="menu">
+      <ul>
+        <li><%= link_to "услуги", admin_services_path %></li>
+        <li><%= link_to "работы", admin_jobs_path %></li>
+        <li><%= link_to "цены", admin_prices_path %></li>
+        <li><%= link_to "клиенты", admin_clients_path %></li>
+        <li><%= link_to "загрузить прайс", admin_lists_path %></li>
+      </ul>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      &copy; 2012
+    </div>
+  </div>
+</body>
+</html>

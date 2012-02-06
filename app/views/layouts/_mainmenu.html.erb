@@ -1,0 +1,15 @@
+    <div id="main-menu">
+      <ul>
+        <li id="first"><%= link_to "ГЛАВНАЯ", root_path %></li>
+        <li><%= link_to "УСЛУГИ", services_path %></li>
+        <li><%= link_to "ЦЕНЫ", prices_path  %></li>
+        <li><%= link_to "КЛИЕНТЫ", clients_path  %></li>    
+        <li><%= link_to "КОНТАКТЫ", contacts_path %></li>
+      </ul>
+      <div id="search">
+        <%= form_tag "/search", :method => :get do %>
+          <%= text_field_tag  :name, nil %>
+          <%= submit_tag "", :id => "submit-search" %>
+        <% end %>
+      </div>
+    </div>

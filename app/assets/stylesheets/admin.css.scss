@@ -1,0 +1,243 @@
+#wrapperadmin{
+  width:1000px;
+  margin:0 auto;
+  #header{
+    height:50px;
+    padding-left:10px;
+    padding-top:30px;
+    h1{
+    font: 1.7em/1.5em "Arial Narrow", helvetica, verdana, arial, times, "Times New Roman", sans-serif;      
+    float:left;
+    }
+    #user-profile{
+      float:right;
+      font-size:13px;
+    }
+  }
+  a{
+    color:#4D4D4D;
+  }
+  #menu{
+    font: 1.0em/1.5em Arial, Tahoma, sans-serif;
+    height:40px;
+    ul li{
+      float:left;
+      margin-right:10px;
+      padding-top:10px;
+    }
+  }
+  #content{
+    clear:both;
+    padding:5px;
+    font: 0.8em/1.5em Arial, Tahoma, sans-serif;
+  }
+  #footer{
+    clear:both;
+    margin-top:100px;
+    height:60px;
+    font: 0.7em/1.5em Arial, "Times New Roman", sans-serif
+  }
+  .jobs{
+    li{
+      h1{
+        font-size:1.2em;
+        margin-bottom:5px;
+      }
+      .image{
+        img{
+          width:164px;
+          height:134px;
+        }  
+      }
+      
+      float:left;
+      margin:15px;
+      width:300px;
+    }
+  }
+  .actions{
+    a{
+      margin-left:5px;
+    }
+    img{
+      width:12px;
+      height:12px;
+    }
+  }
+  .add-button{
+    clear:both;
+    margin-left:20px;
+    margin-top:20px;
+  }
+  .job-show{
+    .title{
+      font: 1.7em/1.5em Arial, Tahoma, sans-serif
+    }
+    .image img{
+      width:164px;
+      height:134px;
+    }
+    .description{
+      margin:10px 0px;
+      font: 0.9em/1.5em Arial, Tahoma, sans-serif
+    }
+    .created_at{
+      font: 0.8em/1.5em Arial, Tahoma, sans-serif;
+      margin-bottom:10px;
+    }
+  }
+  .clear{
+    clear:both;
+  }
+  .flash-notice{
+    color:#fff;
+    padding:5px;
+    background:#8ACE61;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -o-border-radius:5px;
+  }
+  .admin-form{
+    margin:20px 0px 5px 0px;
+    #errorExplanation{
+      margin:10px 0px;
+      color:#9C1E11;
+      h1{
+        font: 1.2em/1.5em Arial, Tahoma, sans-serif;
+      }
+    }
+    h1{
+      font: 1.4em/1.5em Arial, Tahoma, sans-serif;
+    }
+    .field{
+      margin:10px 0px;
+      label{
+        font: 0.9em/1.5em Arial, Tahoma, sans-serif;
+        display: inline-block;
+        width:200px;
+        float:left;
+      }
+    }
+  }
+  .pagination{
+    margin-top:40px;
+    margin-left:10px;
+  }
+  #services-admin{
+    .title{
+      font: 1.7em/1.5em Arial, Tahoma, sans-serif;
+    }
+    .one-service{
+      margin-top:15px;
+      padding:4px;
+      h2{
+        font: 1.2em/1.5em Arial, Tahoma, sans-serif;
+        display: inline-block;
+        width:350px;
+        float:left;
+      }      
+    }  
+    .even{
+      background:#F6F6F6;
+    }
+    .odd{
+      background:#EEEEEE;
+    } 
+    .add{
+      margin-top:20px;
+    }
+  }
+  #service-show{
+    .title{
+      font: 1.7em/1.5em Arial, Tahoma, sans-serif;
+      margin-bottom:10px;
+    }
+    .photo{
+      img{
+        width:200px;
+        height:150px;
+      }
+    }
+    .desc-small{
+      margin:5px 0px;
+    }
+    .desc-full{
+      margin:5px 0px;
+    }
+    .actions{
+      margin-top:20px;
+    }
+  }
+  
+  // clients index page
+  .clients{
+     margin:30px 2px 50px 2px;
+     height: 120px;
+     width:130px;
+     float:left;
+     text-align:center;
+     margin-bottom: 10px;
+    h1{
+      font: 16px Arial, Tahoma, sans-serif;
+    }
+    .logo {
+      height:80px;
+      width:120px;
+      margin:2px;
+    }
+  }  
+
+  .pagination{
+    float:left;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left:auto;
+  }
+  
+  
+  // price index
+  .price {
+    font: 14px Arial, Tahoma, sans-serif;
+    table {
+      border-collapse:collapse;
+      width: 100%;
+      margin-top: 5px;
+      th {
+        height: 30px;
+        background-color:#87cc4b;
+        color: white;
+        padding: 5px;
+        font-weight: bold;
+      }
+      td {
+        text-align:left;
+        height: 20px;
+        vertical-align: bottom;
+        padding: 5px;
+        background-color: #cae294;  
+      }
+      th,td {
+        border: 1px solid #cab5b5;   
+      }
+      .price-edit-link, .price-delete-link  {
+        padding: 4px 10px 4px 10px;
+      }
+      #delete-price, #edit-price {
+        width: 20px;
+      } 
+    }
+  }
+}
+
+// price list
+#pricelist-admin{
+ h1{
+   font-size:20px;
+   margin-top:20px;
+   margin-bottom:10px;
+ } 
+ #pricelist{
+   margin-top:20px;
+ }
+}

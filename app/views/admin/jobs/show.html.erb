@@ -1,0 +1,16 @@
+<div class="job-show">
+  <h1 class="title"><%= @job.title %></h1>
+  <div class="image">
+    <%= image_tag @job.image.url(:thumb) %>
+  </div>
+  <div class="description">
+    <b>Описание:</b> <%= @job.description %>
+  </div>
+  <div class="created_at">
+    Дата добавления: <%= @job.created_at.to_date %>
+  </div>
+  <div class="actions">
+    <%= link_to edit_icon, edit_admin_job_path(@job) %>
+    <%= link_to delete_icon, admin_job_path(@job), :confirm => "Уверены?", :method => :delete %>
+  </div>
+</div>

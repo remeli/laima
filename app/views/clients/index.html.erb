@@ -1,0 +1,15 @@
+<div id="clients-index">
+  <h1 class="title">Клиенты</h1>
+  <ul>
+    <% @clients.each do |c| %>
+      <li>
+        <h1 class="client-title"><%= c.title%></h1>
+          <%= image_tag c.logo.url(:thumb) %> 
+      </li>
+    <% end %>
+  </ul>
+  <div class="clear"></div>
+</div>
+<div id="paginate">
+  <%= paginate @clients %>
+</div>

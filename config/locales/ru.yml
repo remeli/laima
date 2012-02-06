@@ -1,0 +1,40 @@
+ru:
+  views:
+    pagination:
+      previous: "Предыдущий"
+      next: "Следующий"
+      last: "Последний"
+      first: "Первый"
+      truncate: "..."
+        
+  activerecord:
+    models:
+      service: "Услуга"
+      client: "Клиент"
+      list: "Прайс-лист"
+      job: "Работа"
+      price: "Цена"
+      user: "Админ"
+    attributes:
+      service:
+        title: "Название"
+        description: "Описание"
+        short_description: "Короткое описание"
+        photo: "Фотография"
+        parent_id: "Родительская услуга"
+      client:
+        title: "Имя клиента"
+        logo: "Логотип"
+      job:
+        title: "Название работы"
+        description: "Описание"
+        image: "Фотография"
+        service_id: "Услуга"
+      price:
+        price: "Цена"
+        service_id: "Услуга"
+      user:
+        email: "e-mail"
+        password: "пароль"
+        
+        

@@ -6,7 +6,8 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem "acts_as_tree", "~> 0.1.1"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +22,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "paperclip", "~> 2.5.2"
+gem 'kaminari'
+gem 'russian', '~> 0.6.0'
+gem "capistrano", "~> 2.9.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

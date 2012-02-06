@@ -1,0 +1,18 @@
+<div id="price-index">
+  <div class="price-title">
+    <h1>Цены</h1>
+  </div>
+  <table id="price-table">
+    <tr id="head-info">
+      <td>Услуга</td>
+      <td>Цена</td>
+    </tr>
+    <% @prices.each do |p| %>
+      <tr>
+        <td><%= p.service.title %></td>
+        <td><%= number_to_currency(p.price, :locale => :ru,  :precision => 0, :delimiter => " ") %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+

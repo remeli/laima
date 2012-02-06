@@ -1,0 +1,18 @@
+<div id="service-show">
+  <h1 class="title"><%= @service.title %></h1>
+  <div class="photo">
+    <%= image_tag @service.photo.url %>
+  </div>
+  <div class="desc-small">
+    <b>Краткое описание:</b>
+    <%= @service.short_description %>
+  </div>
+  <div class="desc-full">
+    <b>Полное описание:</b>
+    <%= @service.description %>
+  </div>
+  <div class="actions">
+    <%= link_to edit_icon, edit_admin_service_path(@service) %>
+    <%= link_to delete_icon, admin_service_path(@service), :confirm => "Уверены?", :method => :delete %>
+  </div>
+</div>

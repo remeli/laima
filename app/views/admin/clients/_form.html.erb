@@ -1,0 +1,18 @@
+<%= form_for([:admin, @client], :html => { :multipart =>true }) do |f| %>
+  <%= errors_for_object(@client) %>
+  
+  <div class="field">
+  <%= f.label :title, "Название организации:" %>
+  <%= f.text_field :title %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :logo, "Логотип:" %>
+    <%= f.file_field :logo %>
+  </div>
+  
+  <div class="submit">  
+  <%= f.submit @client.button_value %>
+  </div>
+<% end %>
+
