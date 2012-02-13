@@ -3,13 +3,15 @@
   <div class="field">
     <%= f.label :price, "Цена" %>
     <%= f.text_field :price %>
-  </div>
-  
+  </div>  
   <div class="field">
     <%= f.label :service_id, "Услуга" %>
     <%= f.collection_select(:service_id, Service.asctitle, :id, :title) %>
   </div>
-  
+  <div class="field">
+    <%= f.label :comment, "Комментарий" %>
+    <%= f.text_area :comment %>
+  </div>
   <div class="submit">
     <%= f.submit @price.button_value  %>
   </div>  
