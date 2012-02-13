@@ -9,7 +9,7 @@
   </div>
   <div class="desc-full">
     <b>Полное описание:</b>
-    <%= @service.description %>
+    <%= raw(@service.description) %>
   </div>
   <div class="actions">
     <%= link_to edit_icon, edit_admin_service_path(@service) %>
