@@ -6,11 +6,13 @@
     <tr id="head-info">
       <td>Услуга</td>
       <td>Цена</td>
+      <td>Комментарий</td>
     </tr>
     <% @prices.each do |p| %>
       <tr>
         <td><%= p.service.title %></td>
-        <td><%= number_to_currency(p.price, :locale => :ru,  :precision => 0, :delimiter => " ") %></td>
+        <td><%= p.price.nil? ? "По договоренности" : number_to_currency(p.price, :locale => :ru,  :precision => 0, :delimiter => " ") %></td>
+        <td><%= p.comment %></td>
       </tr>
     <% end %>
   </table>
