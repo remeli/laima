@@ -7,7 +7,7 @@
     <%= @service.short_description %>
   </div>
   <div class="full-description">
-    <%= @service.description %>
+    <%= raw(@service.description) %>
   </div>
 </div>
 <ul id="service-jobs">
