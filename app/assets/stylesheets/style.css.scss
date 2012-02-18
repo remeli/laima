@@ -23,21 +23,23 @@ html,body{
 }
 // /* telephone in header */
 #telephone-header{
-  float:left;
-  margin-left:280px;
+  float:right;
+  margin-right:10px;
+  // float:left;
+  // margin-left:280px;
   width:300px;
   margin-top:40px;
+  font-family:Arial Narrow,Tahoma,sans-serif;
   // border:1px solid #ccc;
 }
 #telephone-header h2{
-  font-size:14px;
-  font-family:Arial,Tahoma,sans-serif;
+  font-size:15px;
   color:#818282;
   margin-bottom:5px;
 }
 #telephone-header h2 span{
-  font-size:22px;
-  margin-left:25px;
+  font-size:24px;
+  margin-left:15px;
 }
 #telephone-header h2 a{
   color:#7c9caf;
@@ -401,6 +403,10 @@ a:hover{
   float:left;
   margin-left:20px;
   width:670px;
+  p{
+    margin-bottom:10px;
+    line-height:1.6em;
+  }
 }
 .title-content{
   font: 22px/1.0em "Arial Narrow", Arial, Tahoma, sans-serif;
@@ -624,7 +630,7 @@ a:hover{
     }
     .counters{
       margin-top:45px;
-      margin-left:50px;
+      margin-left:20px;
       float:left;
     }
   }
