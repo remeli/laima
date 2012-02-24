@@ -4,10 +4,10 @@
     <%= image_tag service.photo.url(:small) %>
   </div>
   <div class="short-description">
-    <%= service.short_description %>
+    <%= raw(service.short_description) %>
   </div>
   <div class="full-description">
-    <%= service.description %>
+    <%= raw(service.description) %>
   </div>
 <br /><br />
 </div>
