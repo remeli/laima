@@ -1,13 +1,16 @@
-# -*- encoding : utf-8 -*-
 set :application, "laima"
+set :scm, :git
 set :repository,  "git://github.com/remeli/laima.git"
 
-set :scm, :git
+
 set :user, "hosting_obl-reklama"
 set :use_sudo, false
 set :deploy_to, "/home/#{user}/projects/#{application}"
-
-
+set :keep_releases, 5
+set :unicorn_rails, "/var/lib/gems/1.8/bin/unicorn_rails"
+set :unicorn_conf, "/etc/unicorn/#{application}.obl-reklama.rb"
+set :unicorn_pid, "/var/run/unicorn/#{application}.obl-reklama.pid"
+set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use 1.9.3 do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
 role :web, "lithium.locum.ru"
 role :app, "lithium.locum.ru"
@@ -27,18 +30,31 @@ task :symlink_shared, roles => :app do
   run "ln -nfs #{shared_path}/system #{release_path}/public/system"
 end
 
-set :unicorn_rails, "/var/lib/gems/1.8/bin/unicorn_rails"
-set :unicorn_conf, "/etc/unicorn/laima.obl-reklama.rb"
-set :unicorn_pid, "/var/run/unicorn/laima.obl-reklama.pid"
-set :unicorn_start_cmd, "rvm use 1.9.3 do bundle exec unicorn_rails -Dc #{unicorn_conf}"
+
 
 after "deploy", "deploy:bundle_gems"
-after "deploy:bundle_gems", "deploy:restart"
+after "deploy:bundle_gems", "deploy:migrate"
+after "deploy:migrate", "deploy:ascompile"
+after "deploy:ascomplie", "deploy:restart"
 
 namespace :deploy do
+  # bundle install
   desc "Bundle install"
   task :bundle_gems, :roles => :app do
     run "cd #{deploy_to}/current && rvm use 1.9.3 do bundle install --path ../../shared/gems"
+  end
+  
+  # assets
+  # assets
+  desc "Compile assets"
+  task :ascomplie, :roles => :app do
+    run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake assets:precompile RAILS_ENV=production"    
+  end
+  
+  # migrate
+  desc "Migrations db"
+  task :migrate, :roles => :app do
+    run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake RAILS_ENV=production db:migrate"
   end
   
   desc "Start application"
