@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 set :application, "laima"
 set :repository,  "git://github.com/remeli/laima.git"
 

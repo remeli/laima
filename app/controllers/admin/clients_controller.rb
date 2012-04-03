@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 #encoding: UTF-8
 class Admin::ClientsController < ApplicationController
   before_filter :access

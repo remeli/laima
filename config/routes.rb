@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Laima::Application.routes.draw do
 
   get "sessions/new"

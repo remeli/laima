@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Job < ActiveRecord::Base
 
   attr_accessible :title, :description, :image, :service_id

@@ -1,4 +1,4 @@
-# encoding:utf-8
+# -*- encoding : utf-8 -*-
 class Admin::ListsController < ApplicationController
   
   before_filter :access

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentLogoToClient < ActiveRecord::Migration
   def self.up
     add_column :clients, :logo_file_name, :string

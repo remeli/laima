@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentImageToJob < ActiveRecord::Migration
   def self.up
     add_column :jobs, :image_file_name, :string

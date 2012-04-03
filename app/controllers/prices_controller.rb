@@ -1,4 +1,4 @@
-# encoding:utf-8
+# -*- encoding : utf-8 -*-
 class PricesController < ApplicationController
   respond_to :html
   

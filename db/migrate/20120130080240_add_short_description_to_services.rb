@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddShortDescriptionToServices < ActiveRecord::Migration
   def change
     add_column :services, :short_description, :text

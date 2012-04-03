@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreatePrices < ActiveRecord::Migration
   def change
     create_table :prices do |t|

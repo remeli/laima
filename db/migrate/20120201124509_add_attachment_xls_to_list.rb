@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentXlsToList < ActiveRecord::Migration
   def self.up
     add_column :lists, :xls_file_name, :string
