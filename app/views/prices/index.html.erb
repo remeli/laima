@@ -10,8 +10,10 @@
     </tr>
     <% @prices.each do |p| %>
       <tr>
-        <td><%= p.service.title %></td>
-        <td><%= p.price.nil? ? "По договоренности" : number_to_currency(p.price, :locale => :ru,  :precision => 0, :delimiter => " ") %></td>
+        <td class="title-price"><%= p.service.title %></td>
+        <td class="rub-price">
+          <%= p.price.empty? ? "По договоренности" : p.price %>
+        </td>
         <td><%= p.comment %></td>
       </tr>
     <% end %>
