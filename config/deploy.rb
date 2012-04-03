@@ -35,20 +35,22 @@ end
 after "deploy", "deploy:bundle_gems"
 after "deploy:bundle_gems", "deploy:migrate"
 after "deploy:migrate", "deploy:ascompile"
-after "deploy:ascomplie", "deploy:restart"
+after "deploy:ascompile", "deploy:restart"
 
 namespace :deploy do
+  
+  # assets
+  desc "Compile assets"
+  task :ascompile, :roles => :app do
+    run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake assets:precompile RAILS_ENV=production"    
+  end
+  
   # bundle install
   desc "Bundle install"
   task :bundle_gems, :roles => :app do
     run "cd #{deploy_to}/current && rvm use 1.9.3 do bundle install --path ../../shared/gems"
   end
-  
-  # assets
-  desc "Compile assets"
-  task :ascomplie, :roles => :app do
-    run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake assets:precompile RAILS_ENV=production"    
-  end
+
   
   # migrate
   desc "Migrations db"
