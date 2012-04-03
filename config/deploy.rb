@@ -45,7 +45,6 @@ namespace :deploy do
   end
   
   # assets
-  # assets
   desc "Compile assets"
   task :ascomplie, :roles => :app do
     run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake assets:precompile RAILS_ENV=production"    
@@ -59,16 +58,16 @@ namespace :deploy do
   
   desc "Start application"
   task :start, :roles => :app do
-    run "cd #{current_path} && #{unicorn_start_cmd}"
+    run unicorn_start_cmd
   end
-
+  
   desc "Stop application"
   task :stop, :roles => :app do
     run "[ -f #{unicorn_pid} ] && kill -QUIT `cat #{unicorn_pid}`"
   end
-
+  
   desc "Restart Application"
   task :restart, :roles => :app do
-    run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || cd #{current_path} #{unicorn_start_cmd}"
+    run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
 end
