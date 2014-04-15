@@ -87,9 +87,9 @@ set :use_sudo, false
 set :deploy_to, "/home/#{user}/projects/#{application}"
 set :keep_releases, 1
 
-role :web, "lithium.locum.ru"
-role :app, "lithium.locum.ru"
-role :db,  "lithium.locum.ru", :primary => true
+role :web, "hydrogen.locum.ru"
+role :app, "hydrogen.locum.ru"
+role :db,  "hydrogen.locum.ru", :primary => true
 set :deploy_via, :remote_cache
 set :unicorn_conf, "/etc/unicorn/#{application}.lagox.rb"
 set :unicorn_pid, "/var/run/unicorn/#{application}.lagox.pid"
