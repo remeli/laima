@@ -22,7 +22,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "paperclip"
+gem 'paperclip',                 '3.3.1'  
+gem 'cocaine', "0.4.2"
 gem 'kaminari'
 gem 'russian', '~> 0.6.0'
 gem "capistrano", "~> 2.14.2"
