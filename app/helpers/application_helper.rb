@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def title
-    base_title = "LAIMA - Профессиональная наружная реклама"
+    base_title = "БАННЕР ПРОФ - Профессиональная наружная реклама"
     if @title
       base_title + " / " + @title
     else
