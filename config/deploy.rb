@@ -141,14 +141,14 @@ namespace :deploy do
     puts "\n\n------- end seed -------\n\n"
   end
 
-  desc "Generate sitemap.xml.gz"
-  task :refresh_sitemaps do
-    puts "\n\n=========== Generate sitemap.xml.gz ===========\n\n"
-    run "cd #{latest_release} && #{rake} RAILS_ENV=production sitemap:refresh"
-    puts "\n\n=========== End generate sitemap.xml.gz ===========\n\n"
-  end
+  # desc "Generate sitemap.xml.gz"
+  # task :refresh_sitemaps do
+  #   puts "\n\n=========== Generate sitemap.xml.gz ===========\n\n"
+  #   run "cd #{latest_release} && #{rake} RAILS_ENV=production sitemap:refresh"
+  #   puts "\n\n=========== End generate sitemap.xml.gz ===========\n\n"
+  # end
   
   after "deploy:seed", "deploy:refresh_sitemaps"
-  after "deploy:refresh_sitemaps", "deploy:restart"
+  # after "deploy:refresh_sitemaps", "deploy:restart"
 
 end
