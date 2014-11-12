@@ -27,7 +27,7 @@ gem 'cocaine', "0.4.2"
 gem 'kaminari'
 gem 'russian', '~> 0.6.0'
 gem 'capistrano', '~> 2.15'
-
+gem 'net-ssh', '2.7.0'
 
 gem "rake"
 
