@@ -1,151 +1,118 @@
-# set :application, "laima"
-# set :scm, :git
-# set :repository,  "git://github.com/remeli/laima.git"
+# ================
+# ================
+# ================
+# ================
+# ================
+# ================
+# По умолчанию для дистрибуции проектов используется Bundler.
+# Эта строка включает автоматическое обновление и установку
+# недостающих gems, указанных в вашем Gemfile.
+#
+## !!! Не забудьте добавить
+# gem 'capistrano'
+# gem 'unicorn'
+#
+# в ваш Gemfile.
+#
+# Если вы используете другую систему управления зависимостями,
+# закомментируйте эту строку.
+require 'bundler/capistrano'
 
+## Чтобы не хранить database.yml в системе контроля версий, поместите
+## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
+## следующие строки.
 
-# set :user, "hosting_lagox"
-# set :use_sudo, false
-# set :deploy_to, "/home/#{user}/projects/#{application}"
-# set :keep_releases, 5
-# set :unicorn_rails, "/var/lib/gems/1.8/bin/unicorn_rails"
-# set :unicorn_conf, "/etc/unicorn/#{application}.obl-reklama.rb"
-# set :unicorn_pid, "/var/run/unicorn/#{application}.obl-reklama.pid"
-# set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use 1.9.3 do bundle exec unicorn_rails -Dc #{unicorn_conf})"
-
-# role :web, "lithium.locum.ru"
-# role :app, "lithium.locum.ru"
-# role :db,  "lithium.locum.ru", :primary => true
-# set :deploy_via, :remote_cache
-
-# # shared database
-# after "deploy:update_code", :copy_database_config
-# task :copy_database_config, roles => :app do
-#   db_config = "#{shared_path}/database.yml"
-#   run "cp #{db_config} #{release_path}/config/database.yml"
-# end
-
-# # paperclip
-# after "deploy:update_code", :symlink_shared
-# task :symlink_shared, roles => :app do
-#   run "ln -nfs #{shared_path}/system #{release_path}/public/system"
-# end
-
-
-
-# after "deploy", "deploy:bundle_gems"
-# after "deploy:bundle_gems", "deploy:migrate"
-# after "deploy:migrate", "deploy:ascompile"
-# after "deploy:ascompile", "deploy:restart"
-
-# namespace :deploy do
-  
-#   # assets
-#   desc "Compile assets"
-#   task :ascompile, :roles => :app do
-#     run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake assets:precompile RAILS_ENV=production"    
-#   end
-  
-#   # bundle install
-#   desc "Bundle install"
-#   task :bundle_gems, :roles => :app do
-#     run "cd #{deploy_to}/current && rvm use 1.9.3 do bundle install --path ../../shared/gems"
-#   end
-
-  
-#   # migrate
-#   desc "Migrations db"
-#   task :migrate, :roles => :app do
-#     run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake RAILS_ENV=production db:migrate"
-#   end
-  
-#   desc "Start application"
-#   task :start, :roles => :app do
-#     run unicorn_start_cmd
-#   end
-  
-#   desc "Stop application"
-#   task :stop, :roles => :app do
-#     run "[ -f #{unicorn_pid} ] && kill -QUIT `cat #{unicorn_pid}`"
-#   end
-  
-#   desc "Restart Application"
-#   task :restart, :roles => :app do
-#     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
-#   end
-# end
-
-
-# -*- encoding : utf-8 -*-
-
-# set up
-set :application, "laima"
-set :scm, :git
-set :repository,  "git://github.com/remeli/laima.git"
-
-set :user, "hosting_lagox"
-set :use_sudo, false
-set :deploy_to, "/home/#{user}/projects/#{application}"
-set :keep_releases, 1
-
-role :web, "hydrogen.locum.ru"
-role :app, "hydrogen.locum.ru"
-role :db,  "hydrogen.locum.ru", :primary => true
-set :deploy_via, :remote_cache
-set :unicorn_conf, "/etc/unicorn/#{application}.lagox.rb"
-set :unicorn_pid, "/var/run/unicorn/#{application}.lagox.pid"
-set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use 1.9.3 do bundle exec unicorn_rails -Dc #{unicorn_conf})"
-
-
-# database.yml
 after "deploy:update_code", :copy_database_config
+after "deploy", "deploy:cleanup" # keep only the last 5 releases
+after "deploy", "deploy:migrate"
+after "deploy:migrate", "deploy:seed"
+
 task :copy_database_config, roles => :app do
- db_config = "#{shared_path}/database.yml"
- run "cp #{db_config} #{release_path}/config/database.yml"
+  db_config = "#{shared_path}/database.yml"
+  run "cp #{db_config} #{release_path}/config/database.yml"
 end
 
-# paperclip
+# В rails 3 по умолчанию включена функция assets pipelining,
+# которая позволяет значительно уменьшить размер статических
+# файлов css и js.
+# Эта строка автоматически запускает процесс подготовки
+# сжатых файлов статики при деплое.
+# Если вы не используете assets pipelining в своем проекте,
+# или у вас старая версия rails, закомментируйте эту строку.
+load 'deploy/assets'
+
+# Для удобства работы мы рекомендуем вам настроить авторизацию
+# SSH по ключу. При работе capistrano будет использоваться
+# ssh-agent, который предоставляет возможность пробрасывать
+# авторизацию на другие хосты.
+# Если вы не используете авторизацию SSH по ключам И ssh-agent,
+# закомментируйте эту опцию.
+ssh_options[:forward_agent] = true
+
+# Имя вашего проекта в панели управления.
+# Не меняйте это значение без необходимости, оно используется дальше.
+set :application,     "laima"
+
+# Сервер размещения проекта.
+set :deploy_server,   "hydrogen.locum.ru"
+
+# Не включать в поставку разработческие инструменты и пакеты тестирования.
+set :bundle_without,  [:development, :test]
+
+set :user,            "hosting_lagox"
+set :login,           "lagox"
+set :use_sudo,        false
+set :deploy_to,       "/home/#{user}/projects/#{application}"
+set :unicorn_conf,    "/etc/unicorn/#{application}.#{login}.rb"
+set :unicorn_pid,     "/var/run/unicorn/#{user}/#{application}.#{login}.pid"
+set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
+role :web,            deploy_server
+role :app,            deploy_server
+role :db,             deploy_server, :primary => true
+
+# Следующие строки необходимы, т.к. ваш проект использует rvm.
+set :rvm_ruby_string, "2.1.2"
+set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake" 
+set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
+
+# Настройка системы контроля версий и репозитария,
+# по умолчанию - git, если используется иная система версий,
+# нужно изменить значение scm.
+set :scm,             :git
+
+# Предполагается, что вы размещаете репозиторий Git в вашем
+# домашнем каталоге в подкаталоге git/<имя проекта>.git.
+# Подробнее о создании репозитория читайте в нашем блоге
+# http://locum.ru/blog/hosting/git-on-locum
+set :repository,      "git://github.com/remeli/laima.git"
+
+## Если ваш репозиторий в GitHub, используйте такую конфигурацию
+# set :repository,    "git@github.com:username/project.git"
+
+## --- Ниже этого места ничего менять скорее всего не нужно ---
+
+before 'deploy:finalize_update', 'set_current_release'
+task :set_current_release, :roles => :app do
+    set :current_release, latest_release
+end
+
+# for carrierwave
 after "deploy:update_code", :symlink_shared
 task :symlink_shared, roles => :app do
-  run "ln -nfs #{shared_path}/system #{release_path}/public/system"
+  run "ln -nfs #{shared_path}/system #{release_path}/public/uploads"
 end
 
-after "deploy", "deploy:bundle_gems"
-after "deploy", "deploy:cleanup"
-after "deploy:bundle_gems", "deploy:migrate"
-after "deploy:migrate", "deploy:seed"
-after "deploy:seed", "deploy:ascompile"
-after "deploy:ascompile", "deploy:restart"
+# reset db
+desc "RESET DB"
+task :reset_db, roles: :app do
+  run "cd #{deploy_to}/current && rvm use #{rvm_ruby_string} do #{rake} RAILS_ENV=production db:reset"
+end
+
+  set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
+
 
 # - for unicorn - #
 namespace :deploy do
-  # assets
-  desc "Compile assets"
-  task :ascompile, :roles => :app do
-    run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake assets:precompile RAILS_ENV=production"    
-  end
-  
-  # migrate
-  desc "Migrations db"
-  task :migrate, :roles => :app do
-    run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake RAILS_ENV=production db:migrate"
-  end
-  
-  # seed
-  desc "Seeding data"
-  task :seed do
-    puts "\n\n=== Populating the Production Database! ===\n\n"
-    run "cd #{current_path} && rvm use 1.9.3 do bundle exec rake RAILS_ENV=production db:seed"
-    puts "\n\n------- end seed -------\n\n"
-  end
-  
-  # bundle install
-  desc "Bundle install"
-  task :bundle_gems, :roles => :app do
-    puts "\n\n=== Install gems ===\n\n"
-    run "cd #{current_path} && rvm use 1.9.3 do bundle install --without development --without test --path ~/.gem"
-    puts "\n\n=== end install gems ===\n\n"
-  end
-  
   desc "Start application"
   task :start, :roles => :app do
     run unicorn_start_cmd
@@ -160,9 +127,28 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
-  
-  desc "Empty log files"
-  task :logclean, :roles => :app do
-    run "cd #{shared_path}/log && echo -n > unicorn.stderr.log && echo -n > production.log"
+
+  # migrate
+  desc "Migrations db"
+  task :migrate, :roles => :app do
+    run "cd #{deploy_to}/current && #{rake} RAILS_ENV=production db:migrate"
   end
+  
+  desc "Seeding data"
+  task :seed do
+    puts "\n\n=== Populating the Production Database! ===\n\n"
+    run "cd #{deploy_to}/current && #{rake} RAILS_ENV=production db:seed"
+    puts "\n\n------- end seed -------\n\n"
+  end
+
+  desc "Generate sitemap.xml.gz"
+  task :refresh_sitemaps do
+    puts "\n\n=========== Generate sitemap.xml.gz ===========\n\n"
+    run "cd #{latest_release} && #{rake} RAILS_ENV=production sitemap:refresh"
+    puts "\n\n=========== End generate sitemap.xml.gz ===========\n\n"
+  end
+  
+  after "deploy:seed", "deploy:refresh_sitemaps"
+  after "deploy:refresh_sitemaps", "deploy:restart"
+
 end
